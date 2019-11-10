@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 22px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+}
+
+input {
+    &::placeholder {
+        color: #d1d1d1;
+    }
+}
+
+#container {
+    height: 100vh;
+}
+
+.base {
+    &.nav-bar {
+        height: 100px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        padding-bottom: env(safe-area-inset-bottom);
+
+        .link-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #d1d1d1;
+
+            .nav-icon {
+                height: 46px;
+                margin-bottom: 4px;
+            }
+
+            &.active {
+                color: #70a8f9;
+            }
+        }
+    }
+
+    &.search-box {
+        box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
+        width: 690px;
+        height: 74px;
+        border-radius: 4px;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 20px;
+        padding-left: 90px;
+        background: #fff url(../images/icons/find.png) no-repeat 34px center /30px 30px;
+
+        .input {
+            height: 100%;
+            font-size: 30px;
+            width: 100%;
+
+            &::placeholder {
+                color: #d1d1d1;
+            }
+        }
+    }
+
+    &.right-nav {
+        position: fixed;
+        right: 0;
+        top: 70px;
+        z-index: 99999;
+
+        .item {
+            width: 86px;
+            height: 86px;
+            border-radius: 8px;
+            background: #fff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
+
+            .icon-img {
+                width: 38px;
+            }
+
+        }
+    }
+}
+
+.office-index {
+    .nav-list {
+        .link-btn {
+            line-height: 40px;
+            display: block;
+        }
+    }
+}
+
+.office-ry {
+    .screen-popup {
+        background: #fff;
+        border-radius: 8px;
+        width: 400px;
+        height: 300px;
+    }
+
+    .msg-box {
+        position: fixed;
+        right: 0;
+        bottom: 30px;
+        width: 270px;
+        background: #fff;
+        border-radius: 4px;
+        font-size: 26px;
+        color: #333;
+
+        .title-t {
+            padding: 22px 0 20px 18px;
+        }
+
+        .list {
+            padding: 0 30px;
+
+            .item {
+                margin-bottom: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+// 人员统计
+.screen-ry {
+    padding: 20px 30px 0;
+
+    .right-nav {
+        top: 0;
+    }
+
+    .search-box {
+        height: 74px;
+        margin-bottom: 20px;
+
+        .input {
+            width: 60%;
+            height: 100%;
+            border-radius: 8px;
+            padding-left: 80px;
+            box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
+            font-size: 30px;
+            background: #fff url(../images/icons/find.png) no-repeat 24px center /30px 30px;
+        }
+
+        .select-btn {
+            display: inline-block;
+            height: 100%;
+            line-height: 74px;
+            font-size: 30px;
+            box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
+            border-radius: 8px;
+            padding: 0 35px;
+            margin-left: 15px;
+        }
+    }
+
+    .table-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .table-box {
+        width: 100%;
+        text-align: center;
+
+        th,
+        td {
+            font-size: 26px;
+            width: 25%;
+            height: 72px;
+            border: 1px solid #f3f5ff;
+        }
+
+        th {
+            background: #f4f6f7;
+        }
+
+        tr {
+            &:nth-child(odd) {
+                background: #f3f8ff;
+            }
+        }
+    }
+}
+
+//实时轨迹
+.office-trajectory{
+    .top-bar{
+        height: 120px;
+        background: #fff;
+    }
+    .list-box{
+        .item{
+            height: 90px;
+            line-height: 90px;
+            border-bottom: 1px solid #e7e7e7;
+            .link-item{
+                font-size: 32px;
+                height: 100%;
+                display: block;
+                padding: 0 30px;
+            }
+        }
+    }
+}

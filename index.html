@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" viewport-fit="cover">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+    <!-- <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/> -->
+    <title>监测</title>
+</head>
+
+<body>
+    <div id="container" tabindex="0"></div>
+    <!-- 头部搜索 -->
+    <div class="monitoring">
+        <img src="./images/icons/find.png" alt="搜索icon">
+        <input type="text" placeholder="请输入站名搜索" />
+    </div>
+    <!-- 实情监测 -->
+    <div class="timely">
+        <div class="move_btn">
+            <ul class="timely_list clearfix">
+                <li class="timely_active" data-id="0">实时雨情</li>
+                <li data-id="1">实时水情</li>
+                <li data-id="2">河道水情</li>
+                <li data-id="3">库湖水情</li>
+                <li data-id="4">闸泵水情</li>
+                <li data-id="5">路面积水</li>
+                <li data-id="6">管网水情</li>
+                <li data-id="7">实时视频</li>
+            </ul>
+        </div>
+        <!-- 一日一查 -->
+        <div class="one_check">
+            <a href="#" class=" btn_a">一日一查</a>
+        </div>
+
+    </div>
+    <!-- 实时雨情提示 -->
+    <div class="rain state_show">
+        <div class="region">
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/toBig.png" alt="特大暴雨">
+                    <span>特大暴雨</span>
+                </li>
+                <li>
+                    <img src="./images/icons/big.png" alt="大暴雨">
+                    <span>大暴雨</span>
+                </li>
+                <li>
+                    <img src="./images/icons/baoyu.png" alt="暴雨">
+                    <span>暴雨</span>
+                </li>
+                <li>
+                    <img src="./images/icons/dayu.png" alt="大雨">
+                    <span>大雨</span>
+                </li>
+                <li>
+                    <img src="./images/icons/zhongyu.png" alt="中雨">
+                    <span>中雨</span>
+                </li>
+                <li>
+                    <img src="./images/icons/small.png" alt="小雨">
+                    <span>小雨</span>
+                </li>
+                <li>
+                    <img src="./images/icons/wuyu.png" alt="无雨">
+                    <span>无雨</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 实时水情提示 -->
+    <div class="rain">
+        <!-- 内河 -->
+        <div class="region move_left">
+            <h5>内河</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/n_zheng.png" alt="内河正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/n_di.png" alt="内河低于生态">
+                    <span>低于生态</span>
+                </li>
+                <li>
+                    <img src="./images/icons/n_chao.png" alt="超警戒">
+                    <span>超警戒</span>
+                </li>
+                <li>
+                    <img src="./images/icons/n_yi.png" alt="溢流">
+                    <span>溢流</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 外江 -->
+        <div class="region move_left">
+            <h5>外江</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/w_zheng.png" alt="外江正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/w_di.png" alt="外江低于生态">
+                    <span>低于生态</span>
+                </li>
+                <li>
+                    <img src="./images/icons/w_chao.png" alt="外江超警戒">
+                    <span>超警戒</span>
+                </li>
+                <li>
+                    <img src="./images/icons/w_yi.png" alt="外江溢流">
+                    <span>溢流</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 库湖 -->
+        <div class="region move_left">
+            <h5>库湖</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/k_zheng.png" alt="库湖正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/k_chaoxun.png" alt="超汛限水位">
+                    <span>超汛限水位</span>
+                </li>
+                <li>
+                    <img src="./images/icons/k_chao.png" alt="超汛设计水位">
+                    <span>超设计水位</span>
+                </li>
+                <li>
+                    <img src="./images/icons/k_chaoxiaohe.png" alt="超校核水位">
+                    <span>超校核水位</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 河道水情 -->
+    <div class="rain">
+        <!-- 内河 -->
+        <div class="region move_left">
+            <h5>内河</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/n_zheng.png" alt="内河正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/n_di.png" alt="内河低于生态">
+                    <span>低于生态</span>
+                </li>
+                <li>
+                    <img src="./images/icons/n_chao.png" alt="超警戒">
+                    <span>超警戒</span>
+                </li>
+                <li>
+                    <img src="./images/icons/n_yi.png" alt="溢流">
+                    <span>溢流</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 外江 -->
+        <div class="region move_left">
+            <h5>外江</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/w_zheng.png" alt="外江正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/w_di.png" alt="外江低于生态">
+                    <span>低于生态</span>
+                </li>
+                <li>
+                    <img src="./images/icons/w_chao.png" alt="外江超警戒">
+                    <span>超警戒</span>
+                </li>
+                <li>
+                    <img src="./images/icons/w_yi.png" alt="外江溢流">
+                    <span>溢流</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 库湖水情 -->
+    <div class="rain">
+        <div class="region">
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/k_zheng.png" alt="库湖正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/k_chao.png" alt="超汛限水位">
+                    <span>超汛限水位</span>
+                </li>
+                <li>
+                    <img src="./images/icons/k_chaoxun.png" alt="超汛设计水位">
+                    <span>超设计水位</span>
+                </li>
+                <li>
+                    <img src="./images/icons/k_chaoxiaohe.png" alt="超校核水位">
+                    <span>超校核水位</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 闸泵 -->
+    <div class="rain">
+        <!--闸站 -->
+        <div class="region move_left">
+            <h5>闸站</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/z_open.png" alt="闸站开启">
+                    <span>开启</span>
+                </li>
+                <li>
+                    <img src="./images/icons/z_close.png" alt="闸站关闭">
+                    <span>关闭</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 泵站 -->
+        <div class="region move_left">
+            <h5>泵站</h5>
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/l_open.png" alt="泵站开启">
+                    <span>开启</span>
+                </li>
+                <li>
+                    <img src="./images/icons/l_close.png" alt="泵站关闭">
+                    <span>关闭</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 路面积水 -->
+    <div class="rain">
+        <div class="region">
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/lu_zheng.png" alt="正常">
+                    <span>正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/lu_little.png" alt="轻微积水">
+                    <span>轻微积水</span>
+                </li>
+                <li>
+                    <img src="./images/icons/lu_little1.png" alt="轻微积水">
+                    <span>轻微积水</span>
+                </li>
+                <li>
+                    <img src="./images/icons/lu_big.png" alt="较大积水">
+                    <span>较大积水</span>
+                </li>
+                <li>
+                    <img src="./images/icons/lu_more.png" alt="严重积水">
+                    <span>严重积水</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 管网水情 -->
+    <div class="rain">
+        <div class="region">
+            <ul class="rain_list">
+                <li>
+                    <img src="./images/icons/g_zheng.png" alt="管网正常">
+                    <span>管网正常</span>
+                </li>
+                <li>
+                    <img src="./images/icons/g_chao.png" alt="管网超警戒">
+                    <span>管网超警戒</span>
+                </li>
+                <li>
+                    <img src="./images/icons/g_y.png" alt="溢流">
+                    <span>溢流</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 底部bar -->
+
+
+    <div class="base nav-bar">
+        <a class="link-btn active" href="#">
+            <img class="nav-icon" src="./images/icons/mt_active.png" alt="监测icon">
+            <span>监测</span>
+        </a>
+        <a class="link-btn" href="./office/index.html">
+            <img class="nav-icon" src="./images/icons/office.png" alt="监测icon">
+            <span>办公</span>
+        </a>
+        <a class="link-btn" href="">
+            <img class="nav-icon" src="./images/icons/eyes.png" alt="监测icon">
+            <span>一日一查</span>
+        </a>
+        <a class="link-btn" href="">
+            <img class="nav-icon" src="./images/icons/aBook.png" alt="监测icon">
+            <span>通讯录</span>
+        </a>
+        <a class="link-btn" href="">
+            <img class="nav-icon" src="./images/icons/my.png" alt="监测icon">
+            <span>我的</span>
+        </a>
+    </div>
+
+
+
+    <script
+        src="https://webapi.amap.com/maps?v=1.4.15&key=edfe3a89c29c42630eef01e5ea7dc6e9&plugin=AMap.MarkerClusterer">
+        </script>
+    <script src="./js/jquery.js"></script>
+    <script src='./js/point.js'></script>
+    <script src="./js/data-food.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
