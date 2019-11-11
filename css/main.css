@@ -225,3 +225,19 @@ input::placeholder {
   display: block;
   padding: 0 30px;
 }
+
+.check-index .link-btn {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 120px;
+  margin: auto;
+  font-size: 32px;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  width: 200px;
+  border-radius: 8px;
+  background: #5cacfe;
+}

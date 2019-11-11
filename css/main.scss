@@ -223,22 +223,43 @@ input {
 }
 
 //实时轨迹
-.office-trajectory{
-    .top-bar{
+.office-trajectory {
+    .top-bar {
         height: 120px;
         background: #fff;
     }
-    .list-box{
-        .item{
+
+    .list-box {
+        .item {
             height: 90px;
             line-height: 90px;
             border-bottom: 1px solid #e7e7e7;
-            .link-item{
+
+            .link-item {
                 font-size: 32px;
                 height: 100%;
                 display: block;
                 padding: 0 30px;
             }
         }
+    }
+}
+
+//一日一查首页
+.check-index {
+    .link-btn {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 120px;
+        margin: auto;
+        font-size: 32px;
+        color: #fff;
+        text-align: center;
+        line-height: 70px;
+        width: 200px;
+        border-radius: 8px;
+        background: rgb(92, 172, 254);
     }
 }

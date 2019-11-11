@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.min.css">
     <!-- <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/> -->
     <title>一日一查</title>
 </head>
 
 <body>
     <div id="container" tabindex="0"></div>
+    <div class="base search-box">
+        <input class="input" type="text" placeholder="当前河道：请选择河道">
+    </div>
     <div class="check_infor">
         <div class="river_infor">
             <div class="time_infor time_infor_top">
@@ -59,7 +63,6 @@
             var toolbar = new AMap.ToolBar();
             map.addControl(toolbar)
         })
-      
     </script>
 </body>
 
