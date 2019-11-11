@@ -241,3 +241,16 @@ input::placeholder {
   border-radius: 8px;
   background: #5cacfe;
 }
+
+.office-weather .right-nav {
+  right: 10px;
+}
+
+.office-weather .right-nav .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.office-weather .right-nav .item.active {
+  color: #70a8f9;
+}

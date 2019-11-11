@@ -40,9 +40,13 @@ var Drainage = {
                 showLabel: false,
                 expandZoomRange: true,
             });
+
+            dmodule.find('.J_navList').on('click', 'li', function () {
+                $(this).addClass('active').find('img').attr('src', $(this).find('img').attr('data-src')).siblings().removeClass('active')
+            })
         },
         //一日一查首页
-        checkIndex:function(id){
+        checkIndex: function (id) {
             var dmodule = $('#' + id);
             var map = new AMap.Map('container', {
                 resizeEnable: true,
