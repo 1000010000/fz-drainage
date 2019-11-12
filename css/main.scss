@@ -263,3 +263,105 @@ input {
         background: rgb(92, 172, 254);
     }
 }
+
+//实时雨晴
+.real-time{
+    .tab{
+        background-color: #fff;
+        height:82px;
+        line-height:82px;
+        box-shadow:0px 0px 10px 0px rgba(225,231,240,1); ;
+        .tab-item{
+            list-style:none;
+            display:inline-block;
+            text-align:center;
+            font-size:32px;
+            color:#d1d1d1;
+            margin-right: 30px;
+            &:last-child{
+                margin-right:0; 
+            }
+            &:first-child{
+                padding-left:30px; 
+            }
+            &.active{
+                color: #70a8f9;
+            }
+            .border-active{
+                margin: -10px auto 0;
+                width:30px;
+                height:2px;
+                background:#70a8f9;
+                opacity: 0;
+                &.active{
+                    opacity: 1;
+                    }  
+            }
+            }	
+    }
+    .products{
+        .main-cont { 
+            display: block; 
+            width:100%;
+            overflow: auto;
+            .main-time{
+                height: 82px;
+                line-height: 82px;
+                text-align: center;
+                font-size: 26px;
+                color: #d1d1d1;
+            }
+            form{
+                .form-title{
+                    font-size: 30px;
+                    color: #333;
+                    text-align: center;
+                    line-height: 84px;
+                    background-color: #f5f5f5;
+                    border-bottom: 1px solid #e1e1e1;
+                }
+                .table-list{
+                    width: 100%;
+                    .table-tab{
+                        width: 100%;
+                        height: 82px;
+                        background-color: #f5f5f5;
+                        font-size: 30px;
+                        color: #333;
+                       .th{
+                        padding:0 17px;
+                            text-align: center;
+                       } 
+                      
+                    }
+                    .td{
+                        padding:0 17px;
+                        text-align: center;
+                   }
+                }
+                
+
+            }
+            &:selected{
+                display: block;
+            }
+        }
+        .main-no-num{
+            display: none;
+            margin-top: 194px;
+            text-align: center;
+            .no-num{
+                width: 159px;
+                height: 159px;
+            }
+            .no-num-title{
+                font-size: 32px;
+                color: #d1d1d1;
+                margin-top: 24px;
+            }
+
+        }
+    } 
+   
+     
+  } 
