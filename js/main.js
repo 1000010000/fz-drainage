@@ -42,7 +42,10 @@ var Drainage = {
             });
 
             dmodule.find('.J_navList').on('click', 'li', function () {
-                $(this).addClass('active').find('img').attr('src', $(this).find('img').attr('data-src')).siblings().removeClass('active')
+                $(this).addClass('active').find('img').attr('src', $(this).find('img').attr('data-active')).end().siblings().removeClass('active')
+                $(this).siblings().each(function(index,el){
+                   $(el).find('img').attr('src',$(el).find('img').attr('data-src'))                     
+                })
             })
         },
         //一日一查首页
