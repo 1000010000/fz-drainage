@@ -365,3 +365,16 @@ input {
    
      
   } 
+//气象消息
+.office-weather{
+    .right-nav{
+        right: 10px;
+        .item{
+            display: flex;
+            flex-direction: column;
+            &.active{
+                color: #70a8f9;
+            }
+        }
+    }
+}
