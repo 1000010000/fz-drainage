@@ -58,7 +58,23 @@ var Drainage = {
                 showLabel: false,
                 expandZoomRange: true,
             });
+        },
+        //实时雨晴
+        realTime:function(id){
+            var dmodule = $('#' + id);
+            dmodule.find('.J_tabClick').click(function () { 
+			console.log( $(this).children('p'))
+                    $(this).children('p').addClass("active");
+                    $(this).siblings().children('p').removeClass("active");
+                    $(this).addClass("active").siblings().removeClass("active");
+                     dmodule.find(".products .mainCont").eq($(this).index()).show().siblings().hide();
+                
+               
+                
+            })
+
         }
+           
 
     }
 }
@@ -73,6 +89,7 @@ $(function () {
     doWhileExist('trajectoryDetails', Drainage.Page.trajectoryDetails);
     doWhileExist('officeWeather', Drainage.Page.officeWeather);
     doWhileExist('checkIndex', Drainage.Page.checkIndex);
+    doWhileExist('realTime', Drainage.Page.realTime);
 })
 
 
