@@ -44,6 +44,7 @@ input::placeholder {
   display: flex;
   align-items: center;
   padding-bottom: env(safe-area-inset-bottom);
+  z-index: 1111111;
 }
 
 .base.nav-bar .link-btn {
@@ -121,6 +122,30 @@ input::placeholder {
   border-radius: 8px;
   width: 400px;
   height: 300px;
+}
+
+.office-ry .msg-popup {
+  position: fixed;
+  z-index: 111111;
+  top: 50%;
+  left: 20%;
+  font-size: 28px;
+  background: #fff;
+}
+
+.office-ry .msg-popup input[type=checkbox] {
+  zoom: 200%;
+  vertical-align: middle;
+}
+
+.office-ry .msg-popup .list-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.office-ry .msg-popup .list-box .item {
+  flex: 0 0 50%;
+  margin-bottom: 30px;
 }
 
 .office-ry .msg-box {

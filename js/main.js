@@ -11,7 +11,7 @@ var Drainage = {
                 showLabel: false,
                 expandZoomRange: true,
             });
-
+            
             dmodule.find('.J_screen').click(function () {
                 layer.open({
                     className: 'screen-popup',
