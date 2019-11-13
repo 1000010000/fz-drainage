@@ -10,14 +10,54 @@
 </head>
 
 <body>
-    <div class="screen-ry">
+    <div class="screen-rytj" id="screenRyTj">
         <ul class="base right-nav">
             <li class="item J_screen">
                 <img class="icon-img" src="../images/icons/screen.png" alt="">
             </li>
         </ul>
-     
-
+        <!-- 筛选弹窗 -->
+        <div class="mask-box J_maskBox"></div>
+        <div class="msg-popup J_msgPopup">
+            <ul class="list-box">
+                <li class="item">
+                    <label><input type="checkbox">中心</label>
+                </li>
+                <li class="item">
+                    <label><input type="checkbox">管网公司</label>
+                </li>
+                <li class="item">
+                    <label><input type="checkbox">水系巡查队</label>
+                </li>
+                <li class="item">
+                    <label> <input type="checkbox">其他人员</label>
+                </li>
+            </ul>
+            <p>水系包</p>
+            <ul class="list-box m">
+                <li class="item">
+                    <label><input type="checkbox">包1</label>
+                </li>
+                <li class="item">
+                    <label><input type="checkbox">包2</label>
+                </li>
+                <li class="item">
+                    <label><input type="checkbox">包3</label>
+                </li>
+                <li class="item">
+                    <label> <input type="checkbox">包4</label>
+                </li>
+                <li class="item">
+                    <label> <input type="checkbox">包4</label>
+                </li>
+                <li class="item">
+                    <label> <input type="checkbox">包4</label>
+                </li>
+            </ul>
+        </div>
+        <div class="search-box">
+            
+        </div>
         <p class="table-title">在线人数：0/610</p>
         <table class="table-box">
             <tr>
@@ -52,6 +92,9 @@
             </tr>
         </table>
     </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/layer.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

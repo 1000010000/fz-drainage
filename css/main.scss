@@ -71,7 +71,7 @@ input {
         box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
         width: 690px;
         height: 74px;
-        border-radius: 4px;
+        border-radius: 8px;
         position: fixed;
         z-index: 9999;
         left: 0;
@@ -90,6 +90,22 @@ input {
                 color: #d1d1d1;
             }
         }
+    }
+
+    &.null-box {
+        width: 200px;
+        height: 220px;
+        position: relative;
+        top: 22vh;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        color: #D1D1D1;
+        font-size: 28px;
+        background: url(../images/null.png) no-repeat center top /160px 160px;
     }
 
     &.right-nav {
@@ -115,6 +131,17 @@ input {
 
         }
     }
+    &.center-box{
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 12px;
+        background: #fff;
+        padding: 26px 24px;
+        font-size: 26px;
+        width: 514px;
+    }
 }
 
 .office-index {
@@ -135,17 +162,37 @@ input {
         height: 300px;
     }
 
+    .mask-box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: #000;
+        opacity: .5;
+        z-index: 22222;
+        display: none;
+    }
+
     .msg-popup {
         position: fixed;
         z-index: 111111;
+        width: 552px;
+        border-radius: 12px;
         top: 50%;
-        left: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 28px;
         background: #fff;
+        padding: 40px 30px 0;
+        font-size: 28px;
+        color: #333;
+        display: none;
 
         input[type=checkbox] {
             zoom: 200%;
             vertical-align: middle;
+            margin-right: 4px;
         }
 
         .list-box {
@@ -155,6 +202,13 @@ input {
             .item {
                 flex: 0 0 50%;
                 margin-bottom: 30px;
+            }
+
+            &.m {
+                .item {
+                    flex: 0 0 33%;
+                }
+
             }
         }
     }
@@ -186,11 +240,62 @@ input {
 
 
 // 人员统计
-.screen-ry {
+.screen-rytj {
     padding: 20px 30px 0;
 
     .right-nav {
         top: 0;
+    }
+
+    .mask-box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: #000;
+        opacity: .5;
+        z-index: 22222;
+        display: none;
+    }
+
+    .msg-popup {
+        position: fixed;
+        z-index: 111111;
+        width: 552px;
+        border-radius: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        background: #fff;
+        padding: 40px 30px 0;
+        font-size: 28px;
+        color: #333;
+        display: none;
+
+        input[type=checkbox] {
+            zoom: 200%;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .list-box {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                flex: 0 0 50%;
+                margin-bottom: 30px;
+            }
+
+            &.m {
+                .item {
+                    flex: 0 0 33%;
+                }
+
+            }
+        }
     }
 
     .search-box {
@@ -413,6 +518,36 @@ input {
 
 //气象消息
 .office-weather {
+    .title-x{
+        color: #DD2501;
+        font-size: 34px;
+        font-weight: bold;
+        top: 20px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+        z-index: 99999;
+    }
+    .msg{
+        .close-btn{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: url(../images/icons/close_btn.png) no-repeat center /24px 24px;
+        }
+        .title{
+            font-size: 30px;
+            color: #70A8F9;
+        }
+        p{
+            margin-bottom: 6px;
+            color: #555;
+        }
+    }
     .right-nav {
         right: 10px;
 
