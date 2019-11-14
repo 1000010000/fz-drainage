@@ -47,6 +47,7 @@ input {
         display: flex;
         align-items: center;
         padding-bottom: env(safe-area-inset-bottom);
+        z-index: 1111111;
 
         .link-btn {
             flex: 1;
@@ -70,7 +71,7 @@ input {
         box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
         width: 690px;
         height: 74px;
-        border-radius: 4px;
+        border-radius: 8px;
         position: fixed;
         z-index: 9999;
         left: 0;
@@ -89,6 +90,22 @@ input {
                 color: #d1d1d1;
             }
         }
+    }
+
+    &.null-box {
+        width: 200px;
+        height: 220px;
+        position: relative;
+        top: 22vh;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        color: #D1D1D1;
+        font-size: 28px;
+        background: url(../images/null.png) no-repeat center top /160px 160px;
     }
 
     &.right-nav {
@@ -114,6 +131,17 @@ input {
 
         }
     }
+    &.center-box{
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 12px;
+        background: #fff;
+        padding: 26px 24px;
+        font-size: 26px;
+        width: 514px;
+    }
 }
 
 .office-index {
@@ -125,12 +153,64 @@ input {
     }
 }
 
+//人员
 .office-ry {
     .screen-popup {
         background: #fff;
         border-radius: 8px;
         width: 400px;
         height: 300px;
+    }
+
+    .mask-box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: #000;
+        opacity: .5;
+        z-index: 22222;
+        display: none;
+    }
+
+    .msg-popup {
+        position: fixed;
+        z-index: 111111;
+        width: 552px;
+        border-radius: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        background: #fff;
+        padding: 40px 30px 0;
+        font-size: 28px;
+        color: #333;
+        display: none;
+
+        input[type=checkbox] {
+            zoom: 200%;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .list-box {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                flex: 0 0 50%;
+                margin-bottom: 30px;
+            }
+
+            &.m {
+                .item {
+                    flex: 0 0 33%;
+                }
+
+            }
+        }
     }
 
     .msg-box {
@@ -158,12 +238,64 @@ input {
     }
 }
 
+
 // 人员统计
-.screen-ry {
+.screen-rytj {
     padding: 20px 30px 0;
 
     .right-nav {
         top: 0;
+    }
+
+    .mask-box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: #000;
+        opacity: .5;
+        z-index: 22222;
+        display: none;
+    }
+
+    .msg-popup {
+        position: fixed;
+        z-index: 111111;
+        width: 552px;
+        border-radius: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        background: #fff;
+        padding: 40px 30px 0;
+        font-size: 28px;
+        color: #333;
+        display: none;
+
+        input[type=checkbox] {
+            zoom: 200%;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .list-box {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                flex: 0 0 50%;
+                margin-bottom: 30px;
+            }
+
+            &.m {
+                .item {
+                    flex: 0 0 33%;
+                }
+
+            }
+        }
     }
 
     .search-box {
@@ -265,54 +397,68 @@ input {
 }
 
 //实时雨晴
-.real-time{
-    .tab{
+.real-time {
+    .tab {
         background-color: #fff;
-        height:82px;
-        line-height:82px;
-        box-shadow:0px 0px 10px 0px rgba(225,231,240,1); ;
-        .tab-item{
-            list-style:none;
-            display:inline-block;
-            text-align:center;
-            font-size:32px;
-            color:#d1d1d1;
+        height: 82px;
+        line-height: 82px;
+        box-shadow: 0px 0px 10px 0px rgba(225, 231, 240, 1);
+        ;
+
+        .tab-item {
+            list-style: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 32px;
+            color: #d1d1d1;
             margin-right: 30px;
-            &:last-child{
-                margin-right:0; 
+
+            &:last-child {
+                margin-right: 0;
             }
-            &:first-child{
-                padding-left:30px; 
+
+            &:first-child {
+                padding-left: 30px;
             }
-            &.active{
+
+            &.active {
                 color: #70a8f9;
             }
-            .border-active{
+
+            .border-active {
                 margin: -10px auto 0;
-                width:30px;
-                height:2px;
-                background:#70a8f9;
+                width: 30px;
+                height: 2px;
+                background: #70a8f9;
                 opacity: 0;
-                &.active{
+
+                &.active {
                     opacity: 1;
-                    }  
+                }
             }
-            }	
+        }
     }
     .products{
         .main-cont { 
             display: none; 
             width:100%;
+
+    .products {
+        .main-cont {
+            display: block;
+            width: 100%;
             overflow: auto;
-            .main-time{
+
+            .main-time {
                 height: 82px;
                 line-height: 82px;
                 text-align: center;
                 font-size: 26px;
                 color: #d1d1d1;
             }
-            form{
-                .form-title{
+
+            form {
+                .form-title {
                     font-size: 30px;
                     color: #333;
                     text-align: center;
@@ -373,21 +519,50 @@ input {
                            } 
                     }
                     
+
+                .table-list {
+                    width: 100%;
+
+                    .table-tab {
+                        width: 100%;
+                        height: 82px;
+                        background-color: #f5f5f5;
+                        font-size: 30px;
+                        color: #333;
+
+                        .th {
+                            padding: 0 17px;
+                            text-align: center;
+                        }
+
+                    }
+
+                    .td {
+                        padding: 0 17px;
+                        text-align: center;
+                    }
                 }
-                
+
 
             }
            
+
+            &:selected {
+                display: block;
+            }
         }
-        .main-no-num{
+
+        .main-no-num {
             display: none;
             margin-top: 194px;
             text-align: center;
-            .no-num{
+
+            .no-num {
                 width: 159px;
                 height: 159px;
             }
-            .no-num-title{
+
+            .no-num-title {
                 font-size: 32px;
                 color: #d1d1d1;
                 margin-top: 24px;
@@ -718,16 +893,54 @@ input {
         }
     }
 }
+    }
+
+
+}
+
 //气象消息
-.office-weather{
-    .right-nav{
+.office-weather {
+    .title-x{
+        color: #DD2501;
+        font-size: 34px;
+        font-weight: bold;
+        top: 20px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+        z-index: 99999;
+    }
+    .msg{
+        .close-btn{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: url(../images/icons/close_btn.png) no-repeat center /24px 24px;
+        }
+        .title{
+            font-size: 30px;
+            color: #70A8F9;
+        }
+        p{
+            margin-bottom: 6px;
+            color: #555;
+        }
+    }
+    .right-nav {
         right: 10px;
-        .item{
+
+        .item {
             display: flex;
             flex-direction: column;
-            &.active{
+
+            &.active {
                 color: #70a8f9;
             }
         }
     }
+}
 }
