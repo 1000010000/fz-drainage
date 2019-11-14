@@ -40,7 +40,7 @@ AMap.plugin('AMap.ToolBar', function () {
 
 //   切换
 var time_list = [{
-        zoom: 19,
+        zoom: 8,
         center: [121.511958, 31.239103]
     },
     {

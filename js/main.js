@@ -100,9 +100,7 @@ var Drainage = {
                     content: `您确认要选择${$(this).find('a').text()}`
                     , btn: ['确认', '取消']
                     , yes: function (index) {
-                        console.log(self.find('a').attr('data-url'));
-                        
-                        // location.href = $(this).attr('data-url')
+                        location.href = self.attr('data-url')
                         layer.close(index);
                     }
                 });
