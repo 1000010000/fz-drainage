@@ -80,7 +80,7 @@ input {
         top: 20px;
         padding-left: 90px;
         background: #fff url(../images/icons/find.png) no-repeat 34px center /30px 30px;
-
+        overflow: hidden;
         .input {
             height: 100%;
             font-size: 30px;
@@ -395,7 +395,15 @@ input {
         background: rgb(92, 172, 254);
     }
 }
-
+.check_infor{
+    .bule{
+        color: #70A8F9;
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        font-size: 30px;
+    }
+}
 //实时雨晴
 .real-time {
     .tab {

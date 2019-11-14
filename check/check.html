@@ -13,11 +13,12 @@
 
 <body>
     <div id="container" tabindex="0"></div>
-    <div class="base search-box">
-        <a href="./选择河道.html"> <input class="input" type="text" placeholder="当前河道：请选择河道"></a>
 
-    </div>
-    <div class="check_infor">
+    <div class="check_infor" id="checkInfor">
+        <div class="base search-box">
+            <p class="bule">选择河道</p>
+            <a href="./选择河道.html"> <input class="input J_inputValue" type="text" placeholder="当前河道：请选择河道"></a>
+        </div>
         <div class="river_infor">
             <div class="time_infor time_infor_top">
                 <span class="m-num time_infor_span1">00</span>
@@ -36,7 +37,7 @@
                 </div>
             </div>
             <div class="btn-open">
-                <a href="javascript:void(0)" class="btn_a time-open">
+                <a href="javascript:void(0)" class="btn_a time-open J_timeOpen">
                     开始巡河
                 </a>
             </div>
@@ -46,12 +47,14 @@
 
     <script
         src="https://webapi.amap.com/maps?v=1.4.15&key=edfe3a89c29c42630eef01e5ea7dc6e9&plugin=AMap.MarkerClusterer">
-        </script>
+    </script>
     <script src="../js/jquery.js"></script>
     <script src='../js/point.js'></script>
     <script src="../js/data-food.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/timely.js"></script>
+    <script src="../js/layer.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         var map = new AMap.Map('container', {
             resizeEnable: true,

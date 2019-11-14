@@ -78,15 +78,31 @@ var Drainage = {
                 expandZoomRange: true,
             });
         },
+        // 一日一查-开始巡河
+        checkInfor:function(id){
+            var dmodule = $('#' + id);
+            dmodule.find('.J_timeOpen').click(function(){
+                if($('.J_inputValue').val()==''){
+                    layer.open({
+                        content: '福州水系调度系统：请先选择河道！'
+                        , skin: 'msg'
+                        , time: 2 //2秒后自动关闭
+                    });
+                }
+            })
+        },
         //一日一查-选择河道
         riverList: function (id) {
             var dmodule = $('#' + id);
             dmodule.find('.J_listBox').on('click', 'li', function () {
+                var self = $(this) 
                 layer.open({
                     content: `您确认要选择${$(this).find('a').text()}`
                     , btn: ['确认', '取消']
                     , yes: function (index) {
-                        location.href = $(this).attr('data-url')
+                        console.log(self.find('a').attr('data-url'));
+                        
+                        // location.href = $(this).attr('data-url')
                         layer.close(index);
                     }
                 });
@@ -165,6 +181,7 @@ $(function () {
     doWhileExist('basicDetails', Drainage.Page.basicDetails);
     doWhileExist('screenRyTj', Drainage.Page.screenRyTj);
     doWhileExist('riverList', Drainage.Page.riverList);
+    doWhileExist('checkInfor', Drainage.Page.checkInfor);
 })
 
 
