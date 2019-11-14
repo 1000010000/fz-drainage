@@ -96,56 +96,51 @@ var Drainage = {
         //实时雨晴
         realTime: function (id) {
             var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click','li',function(){ 
-			console.log( $(this).children('p'))
-                    $(this).children('p').addClass("active");
-                    $(this).siblings().children('p').removeClass("active");
-                    $(this).addClass("active").siblings().removeClass("active");
-                    dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-                
-               
-                
+            dmodule.find('.J_tabClick').on('click', 'li', function () {
+                console.log($(this).children('p'))
+                $(this).children('p').addClass("active");
+                $(this).siblings().children('p').removeClass("active");
+                $(this).addClass("active").siblings().removeClass("active");
+                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
             })
 
         },
         //闸泵水情
-        gatePump:function(id){
+        gatePump: function (id) {
             var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click','li',function(){ 
+            dmodule.find('.J_tabClick').on('click', 'li', function () {
                 $(this).children('p').addClass("active");
                 $(this).siblings().children('p').removeClass("active");
                 $(this).addClass("active").siblings().removeClass("active");
                 dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-                
-               
-                
+
+
+
             })
 
         },
         // 实时雨晴--基本信息
-        basicDetails:function(id){
+        basicDetails: function (id) {
             var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click','li',function(){ 
+            dmodule.find('.J_tabClick').on('click', 'li', function () {
                 $(this).children('p').addClass("active");
                 $(this).siblings().children('p').removeClass("active");
                 $(this).addClass("active").siblings().removeClass("active");
                 dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-        })
-        dmodule.find('.J_screen').click(function () {
-            layer.open({
-                className: 'screen-popup',
-                content: '内容'
             })
-        })
-       
+            dmodule.find('.J_screen').click(function () {
+                layer.open({
+                    className: 'screen-popup',
+                    content: '内容'
+                })
+            })
+
             dmodule.find('.J_tabClick').click(function () {
                 console.log($(this).children('p'))
                 $(this).children('p').addClass("active");
                 $(this).siblings().children('p').removeClass("active");
                 $(this).addClass("active").siblings().removeClass("active");
                 dmodule.find(".products .mainCont").eq($(this).index()).show().siblings().hide();
-
-
 
             })
 
