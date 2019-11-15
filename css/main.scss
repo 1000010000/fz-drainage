@@ -80,6 +80,7 @@ input {
         top: 20px;
         padding-left: 90px;
         background: #fff url(../images/icons/find.png) no-repeat 34px center /30px 30px;
+        overflow: hidden;
 
         .input {
             height: 100%;
@@ -396,6 +397,7 @@ input {
     }
 }
 
+<<<<<<< HEAD
     
 
 //闸泵水情
@@ -404,6 +406,23 @@ input {
         height:100px;
         background:rgba(255,255,255,1);
         box-shadow:0px 6px 8px 0px rgba(130,130,130,0.06);
+=======
+.check_infor {
+    .bule {
+        color: #70A8F9;
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        font-size: 30px;
+    }
+}
+
+//实时雨晴
+.real-time {
+    .tab {
+        background-color: #fff;
+        height: 82px;
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
         line-height: 82px;
         .tab-item{
             list-style: none;
@@ -435,9 +454,234 @@ input {
         }
         
     }
+<<<<<<< HEAD
     .products{
-        .main-cont {
+=======
+
+}
+
+.products {
+    .main-cont {
+        display: block;
+        width: 100%;
+        overflow: auto;
+
+        .main-time {
+            height: 82px;
+            line-height: 82px;
+            text-align: center;
+            font-size: 26px;
+            color: #d1d1d1;
+        }
+
+        form {
+            .form-title {
+                font-size: 30px;
+                color: #333;
+                text-align: center;
+                line-height: 84px;
+                background-color: #f5f5f5;
+                border-bottom: 1px solid #e1e1e1;
+            }
+
+            .table-list-scroll {
+                width: 100%;
+
+                .table-list {
+                    width: auto;
+                    display: -webkit-box;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                        width: 0;
+                        height: 0;
+                    }
+
+                    .form-title {
+                        font-size: 30px;
+                        color: #333;
+                        text-align: center;
+                        line-height: 84px;
+                        background-color: #f5f5f5;
+                        border-bottom: 1px solid #e1e1e1;
+
+                        .name-sw {
+                            width: 50%;
+
+                        }
+
+                        .name-jsl {
+                            width: 50%;
+                        }
+
+
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: rgb(229, 233, 236);
+                    }
+
+                    .table-tab {
+                        height: 82px;
+                        background-color: #f5f5f5;
+                        font-size: 30px;
+                        color: #333;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+
+                        .th {
+                            text-align: center;
+                            padding: 0 20px;
+                        }
+
+                    }
+
+                    .td {
+                        padding: 0 20px;
+                        text-align: center;
+                        height: 82px;
+                        font-size: 26px;
+                    }
+                }
+
+
+                .table-list {
+                    width: 100%;
+
+                    .table-tab {
+                        width: 100%;
+                        height: 82px;
+                        background-color: #f5f5f5;
+                        font-size: 30px;
+                        color: #333;
+
+                        .th {
+                            padding: 0 17px;
+                            text-align: center;
+                        }
+
+                    }
+
+                    .td {
+                        padding: 0 17px;
+                        text-align: center;
+                    }
+                }
+
+
+            }
+
+
+            &:selected {
+                display: block;
+            }
+        }
+
+        .main-no-num {
+            display: none;
+            margin-top: 194px;
+            text-align: center;
+
+            .no-num {
+                width: 159px;
+                height: 159px;
+            }
+
+            .no-num-title {
+                font-size: 32px;
+                color: #d1d1d1;
+                margin-top: 24px;
+            }
+
+        }
+
+        &.selected {
             display: block;
+        }
+    }
+
+    .foot-filter {
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        width: 100%;
+
+        .follow-btn {
+            display: inline-block;
+            margin-right: 24px;
+            width: 172px;
+            height: 72px;
+            font-size: 34px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            line-height: 72px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(225, 231, 240, 1);
+
+            &.active {
+                color: #fff;
+                background-color: #70a8f9;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+//闸泵水情
+.gate-pump {
+
+    .tab {
+        background-color: #fff;
+        height: 82px;
+        line-height: 82px;
+        box-shadow: 0px 0px 10px 0px rgba(225, 231, 240, 1);
+        ;
+
+        .tab-item {
+            list-style: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 32px;
+            color: #d1d1d1;
+            margin-right: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:first-child {
+                padding-left: 30px;
+            }
+
+            &.active {
+                color: #70a8f9;
+            }
+
+            .border-active {
+                margin: -10px auto 0;
+                width: 30px;
+                height: 2px;
+                background: #70a8f9;
+                opacity: 0;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .products {
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
+        .main-cont {
+            display: none;
             width: 100%;
             overflow: auto;
             &.selected {
@@ -466,6 +710,7 @@ input {
                 text-align: center;
                 font-size: 26px;
                 color: #d1d1d1;
+<<<<<<< HEAD
             } 
             .table-list-scroll {
                 width: 100%;
@@ -481,6 +726,28 @@ input {
                         background-color: #f5f5f5;
                         border-bottom: 1px solid #e1e1e1;
                         td{
+=======
+            }
+
+            form {
+
+                .table-list-scroll {
+                    width: 100%;
+
+                    .table-list {
+                        width: auto;
+                        display: -webkit-box;
+                        overflow-x: scroll;
+                        white-space: nowrap;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                            width: 0;
+                            height: 0;
+                        }
+
+                        .form-title {
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                             font-size: 30px;
                             color: #333; 
                         }
@@ -507,6 +774,7 @@ input {
                             padding: 0 20px;
                             text-align: center;
                             height: 82px;
+<<<<<<< HEAD
                             font-size: 26px;  
                         }
                      
@@ -567,8 +835,67 @@ input {
                     text-indent: 20px;
                    } 
                }
+=======
+                            font-size: 26px;
+                        }
+                    }
+
+
+                }
+
 
             }
+
+        }
+
+        .main-no-num {
+            display: none;
+            margin-top: 194px;
+            text-align: center;
+
+            .no-num {
+                width: 159px;
+                height: 159px;
+            }
+
+            .no-num-title {
+                font-size: 32px;
+                color: #d1d1d1;
+                margin-top: 24px;
+            }
+
+        }
+
+        &.selected {
+            display: block;
+        }
+    }
+
+    .foot-filter {
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        width: 100%;
+
+        .follow-btn {
+            display: inline-block;
+            margin-right: 24px;
+            width: 172px;
+            height: 72px;
+            font-size: 34px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            line-height: 72px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(225, 231, 240, 1);
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
+
+            &.active {
+                color: #fff;
+                background-color: #70a8f9;
+            }
+<<<<<<< HEAD
             .invest-btn{
                 margin-top: 20px;
                 display: flex;
@@ -770,12 +1097,83 @@ input {
                         color:#333;
                         font-size: 28px;
                     }
+=======
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+// 实时水情基本信息
+.basic-details {
+    .tab {
+        height: 100px;
+        line-height: 100px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 6px 8px 0px rgba(130, 130, 130, 0.06);
+
+        .tab-item {
+            width: 49%;
+            list-style: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 32px;
+            color: #d1d1d1;
+
+            &.active {
+                color: #70a8f9;
+            }
+
+            .border-active {
+                margin: -10px auto 0;
+                width: 30px;
+                height: 2px;
+                background: #70a8f9;
+                opacity: 0;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .products {
+        .main-cont {
+            display: none;
+            width: 100%;
+            overflow: auto;
+
+            .main-title {
+                height: 90px;
+                margin-left: 30px;
+                line-height: 90px;
+                font-size: 28px;
+                font-weight: 400;
+                color: rgba(51, 51, 51, 1);
+                border-bottom: 1px solid #E5E5E5;
+            }
+
+            .pad {
+                padding: 0 30px;
+
+                .main-h2 {
+                    font-size: 32px;
+                    text-align: center;
+                    font-weight: 400;
+                    margin-top: 27px;
+                    color: rgba(51, 51, 51, 1);
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                 }
             }
         }  
     }
 }
 
+<<<<<<< HEAD
 // 实时水情基本信息
 .basic-details {
     .tab {
@@ -828,6 +1226,8 @@ input {
                     margin-top: 27px;
                     color: rgba(51, 51, 51, 1);
                 }
+=======
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                 .main-detail {
                     margin-top: 20px;
                     font-size: 26px;
@@ -835,25 +1235,45 @@ input {
                     font-weight: 400;
                     color: rgba(171, 171, 171, 1);
                 }
+<<<<<<< HEAD
                 .main-img-box {
                     margin-top: 28px;
+=======
+
+                .main-img-box {
+                    margin-top: 28px;
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                     .main-img {
                         display: inline-block;
                         width: 690px;
                         height: 395px;
                         background-color: #ff00ff;
+<<<<<<< HEAD
                     }
+=======
+
+                    }
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                     .main-img-detail {
                         height: 60px;
                         line-height: 60px;
                         text-align: center;
+<<<<<<< HEAD
                         .main-img-icon {}
+=======
+
+                        .main-img-icon {}
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                         .main-name {
                             font-size: 26px;
                             font-weight: 400;
                             color: rgba(51, 51, 51, 1);
                         }
                     }
+<<<<<<< HEAD
                 }
                 p {
                     height: 72px;
@@ -879,12 +1299,51 @@ input {
                             padding: 0 47px;
                         }
 
+=======
+                }
+
+                p {
+                    height: 72px;
+                    line-height: 72px;
+                    overflow: hidden;
+                    font-style: 28px;
+                    font-weight: 400;
+                    color: rgba(171, 171, 171, 1);
+
+                    .new-level {
+                        float: left;
+                    }
+
+                    .level-time {
+                        float: right;
+                    }
+
+                }
+
+                table {
+                    tr {
+                        height: 84px;
+                        line-height: 84px;
+                        text-align: center;
+
+                        th {
+
+                            padding: 0 47px;
+                        }
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                         &:first-child {
                             background: rgba(247, 247, 247, 1);
                             font-size: 30px;
                             font-weight: 400;
                             color: rgba(51, 51, 51, 1);
+<<<<<<< HEAD
                         }
+=======
+
+                        }
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                         td {
                             padding: 0 50px;
                             font-size: 26px;
@@ -892,11 +1351,16 @@ input {
                             color: rgba(51, 51, 51, 1);
                         }
                     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
                     tr:nth-child(odd) {
                         background-color: #F8F9FE;
                     }
                 }
             }
+<<<<<<< HEAD
         }
         &.selected {
             display: block;
@@ -1022,9 +1486,190 @@ input {
                     tr:nth-child(odd) {
                         background-color: #F8F9FE;
                     }
-                }
+=======
+
+
+        }
+
+        &.selected {
+            display: block;
+        }
+    }
+}
+
+
+//气象消息
+.office-weather {
+    .title-x {
+        color: #DD2501;
+        font-size: 34px;
+        font-weight: bold;
+        top: 20px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+        z-index: 99999;
+    }
+
+    .msg {
+        .close-btn {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: url(../images/icons/close_btn.png) no-repeat center /24px 24px;
+        }
+
+        .title {
+            font-size: 30px;
+            color: #70A8F9;
+        }
+
+        p {
+            margin-bottom: 6px;
+            color: #555;
+        }
+    }
+
+    .right-nav {
+        right: 10px;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+
+            &.active {
+                color: #70a8f9;
             }
         }
+    }
+}
+
+//管网水情-index
+.page-gwsq {
+    ::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .menu {
+        display: -webkit-box;
+        overflow-x: scroll;
+        line-height: 100px;
+        box-shadow: 0px 6px 8px 0px rgba(130, 130, 130, 0.06);
+
+        .item {
+            margin-left: 30px;
+            color: #D1D1D1;
+            font-size: 32px;
+            position: relative;
+            cursor: pointer;
+
+            &.active {
+                color: #5AA9FF;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 22px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    height: 2px;
+                    background: #5AA9FF;
+                    width: 50%;
+                }
+            }
+
+        }
+
+        .time-btn {
+            margin-left: 30px;
+            padding-right: 100px;
+            color: #D1D1D1;
+            font-size: 32px;
+            cursor: pointer;
+        }
+    }
+
+    .tab-main {
+        &.hide {
+            display: none;
+        }
+
+        padding-top: 8px;
+        overflow: hidden;
+
+        .time-tips {
+            text-align: center;
+            line-height: 92px;
+            color: #ABABAB;
+            font-size: 26px;
+        }
+
+        .table-list-scroll {
+            width: 100%;
+
+            .main {
+                width: auto;
+                display: -webkit-box;
+                overflow-x: scroll;
+                white-space: nowrap;
+
+                tr {
+                    border-bottom: 1px solid #F0F0F0;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #F7F7F7;
+                }
+
+                th {
+                    text-align: center;
+                    padding: 0 20px;
+                    border-bottom: 1px solid #F0F0F0;
+                    border-right: 1px solid #F0F0F0;
+                    font-weight: normal;
+                }
+
+                td {
+                    margin: 0;
+                    padding: 0;
+                    border-bottom: 1px solid #F0F0F0;
+                    border-right: 1px solid #F0F0F0;
+                    padding: 0 20px;
+                    text-align: center;
+                    height: 82px;
+                    font-size: 26px;
+                }
+
+                .title {
+                    font-size: 30px;
+                    color: #333;
+                    text-align: center;
+                    line-height: 84px;
+                    background-color: #F7F7F7;
+                    border-bottom: 1px solid #F0F0F0;
+                }
+
+                .list {
+                    height: 84px;
+                    background-color: #f5f5f5;
+                    font-size: 30px;
+                    color: #333;
+                    border-bottom: 1px solid #000;
+                    border-spacing: 0;
+
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
+                }
+            }
+
+        }
+<<<<<<< HEAD
         &.selected {
             display: block;
         }
@@ -1150,6 +1795,181 @@ input {
                         background-color: #F8F9FE;
                     }
                 }
+=======
+    }
+
+    .footer {
+        height: 120px;
+
+        .main {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 24px 0;
+
+            .item {
+                margin: 0 12px;
+                width: 172px;
+                line-height: 72px;
+                box-shadow: 0px 0px 10px 0px #e1e7f0;
+                color: #333333;
+                font-size: 34px;
+                border-radius: 8px;
+                text-align: center;
+
+                &.active {
+                    background: #5BA9FF;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}
+
+//任意
+.time-pop-up {
+    width: 550px;
+    background: #FFF;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    .box-time {
+        padding: 40px 0 0;
+        color: #333333;
+        font-size: 30px;        
+        .item {          
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;            
+            .icon {
+                margin-left: .45rem;
+                width: 20px;
+                height: 20px;
+                background: url(../images/icons/drop.png) no-repeat center;
+                background-size: 100%;
+            }
+        }
+    }
+    .box-btn {
+        line-height: 80px;
+        border-top: 1px solid #BBBBBB;
+        display: flex;
+        .btn {
+            flex: 1;
+            text-align: center;
+            border-right: 1px solid #BBBBBB;
+            color: #999999;
+            font-size: 30px;
+            &:last-child {
+                color: #5AA9FF;
+                border-right: none;
+            }
+        }
+    }
+}
+
+//筛选弹窗
+.choice-pop-up {
+    width: 100%;
+    background: #FFF;
+    color: #333333;
+    font-size: 30px;
+
+    .list-box {
+        overflow: hidden;
+        padding: 10px 30px 0;
+
+        .list {
+            clear: both;
+            overflow: hidden;
+            line-height: 64px;
+            display: flex;
+            margin-bottom: 40px;
+
+            .left {
+                flex: 0 0 140px;
+            }
+
+            .right {
+                .input {
+                    line-height: 64px;
+                    border: none;
+                    font-size: 30px;
+                }
+
+                .item {
+                    cursor: pointer;
+                    display: block;
+                    float: left;
+                    margin: 0 20px 20px 0;
+                    width: 122px;
+                    line-height: 64px;
+                    border: 1px solid #E0E0E0;
+                    text-align: center;
+                    font-size: 26px;
+                    border-radius: 8px;
+
+                    &.active {
+                        background: #5AA9FF;
+                        border-color: #5AA9FF;
+                        color: #FFF;
+                    }
+                }
+            }
+
+            &.state {
+                margin-top: -20px;
+
+                .item {
+                    width: 170px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.btn-box {
+    line-height: 75px;
+    border-top: 1px solid #E0E0E0;
+    display: flex;
+
+    .btn {
+        cursor: pointer;
+        flex: 1;
+        text-align: center;
+        font-size: 32px;
+
+        &.active {
+            background: #5AA9FF;
+            color: #FFF;
+        }
+    }
+}
+
+
+//管网水情-监测信息
+.gwsq-jcxx {
+    .menu {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        .item {
+            flex: 1;
+            text-align: center;
+
+            &.active:after {
+                width: 10%;
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
             }
         }
         &.selected {
@@ -1158,6 +1978,7 @@ input {
     }
 }
 
+<<<<<<< HEAD
 //气象消息
 .office-weather {
     .title-x {
@@ -1191,9 +2012,31 @@ input {
         p {
             margin-bottom: 6px;
             color: #555;
+=======
+    .tab-main {
+        margin: 0 30px;
+
+        .top-tips {
+            padding: 20px 0 28px;
+            color: #ABABAB;
+            font-size: 26px;
+            text-align: center;
+
+            .title {
+                color: #333333;
+                font-size: 30px;
+                margin-bottom: 18px;
+            }
+        }
+
+        .details-data {
+            height: 430px;
+            background: #5AA9FF;
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
         }
     }
 
+<<<<<<< HEAD
     .right-nav {
         right: 10px;
 
@@ -1885,4 +2728,81 @@ input {
             }
         }  
     }
+=======
+        .data-time {
+            margin: 38px 0 25px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 30px;
+            color: #ABABAB;
+            font-size: 28px;
+        }
+
+        .table-list-scroll {
+            .main {
+                width: 100%;
+                display: table;
+
+                tr:nth-child(even) {
+                    background-color: #FFF;
+                }
+
+                tr:nth-child(2n-1) {
+                    background-color: #F8F9FF;
+                }
+            }
+        }
+
+        .infor-list {
+            .item {
+                line-height: 96px;
+                border-bottom: 1px solid #E5E5E5;
+                padding-left: 30px;
+                color: #333333;
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+//右测悬浮
+.slide-bar {
+    position: fixed;
+    z-index: 101;
+    right: 0;
+    top: 0;
+
+    .item {
+        display: block;
+        width: 86px;
+        height: 86px;
+        background-color: #FFF;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto 42px;
+        margin-bottom: 10px;
+        box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.2);
+
+        &.address {
+            background-image: url(../images/icons/position.png);
+        }
+
+        &.screen {
+            background-image: url(../images/icons/screen.png);
+        }
+    }
+}
+
+//左测悬浮
+.slide-bar-left {
+    position: fixed;
+    width: 86px;
+    height: 86px;
+    background: #FFF url(../images/icons/add.png) no-repeat center;
+    background-size: auto 42px;
+    left: 30px;
+    bottom: 150px;
+    z-index: 102;
+    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.2);
+>>>>>>> 90c608ee0c7a3fddcf04acd6d241ba9d9f828143
 }

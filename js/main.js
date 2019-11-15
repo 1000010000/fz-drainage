@@ -1,4 +1,3 @@
-
 var Drainage = {
     Page: {
         //办公-人员
@@ -78,15 +77,29 @@ var Drainage = {
                 expandZoomRange: true,
             });
         },
+        // 一日一查-开始巡河
+        checkInfor: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_timeOpen').click(function () {
+                if ($('.J_inputValue').val() == '') {
+                    layer.open({
+                        content: '福州水系调度系统：请先选择河道！',
+                        skin: 'msg',
+                        time: 2 //2秒后自动关闭
+                    });
+                }
+            })
+        },
         //一日一查-选择河道
         riverList: function (id) {
             var dmodule = $('#' + id);
             dmodule.find('.J_listBox').on('click', 'li', function () {
+                var self = $(this)
                 layer.open({
-                    content: `您确认要选择${$(this).find('a').text()}`
-                    , btn: ['确认', '取消']
-                    , yes: function (index) {
-                        location.href = $(this).attr('data-url')
+                    content: `您确认要选择${$(this).find('a').text()}`,
+                    btn: ['确认', '取消'],
+                    yes: function (index) {
+                        location.href = self.attr('data-url')
                         layer.close(index);
                     }
                 });
@@ -299,6 +312,63 @@ var Drainage = {
                 })
             })
 
+
+        //管网水情-index
+        gwsqIndex: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_gwsqIndex').on('click', '.menu .item', function () {
+                $('.J_gwsqIndex .menu .item').attr('class', 'item');
+                $(this).addClass('active');
+                $('.J_gwsqIndex .tab-main').hide().eq($(this).index()).show();
+            })
+
+            //任意
+            dmodule.find('.J_gwsqIndex').on('click', '.J_renyiBtn', function () {
+                var _html = $('.J_timePopUp').html();
+                layer.open({
+                    type: 1,
+                    className: 'layer-box',
+                    content: _html
+                })
+            })            
+            
+            dmodule.on('click', '.J_screenBtn', function () {
+                var _html = $('.J_choicePopUp').html();
+                layer.open({
+                    type: 1,
+                    className: 'layer-box',
+                    content: _html,
+                    anim: 'down',
+                    style: 'position:fixed; top:0; width:100%; display:table;'
+                })
+            })
+
+            $('body').on('click', '.J_popClose .btn', function () {
+                layer.closeAll()
+                //确认
+                if ($(this).hasClass('active')) {
+                    alert('提交') //确认执行事件
+                }
+            })
+
+            $('body').on('click', '.J_listBox .list .item', function () {
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+
+            $('body').on('click', '.J_timeBtn', function () {
+                alert(2)
+            })            
+
+        },
+
+        //管网水情-监测信息
+        gwsqJcxx: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_gwsqJcxx').on('click', '.menu li', function () {
+                $('.J_gwsqJcxx .menu li').attr('class', 'item');
+                $(this).addClass('active');
+                $('.J_gwsqJcxx .tab-main').hide().eq($(this).index()).show();
+            })
         },
 
     }
@@ -325,3 +395,7 @@ $(function () {
 })
 
 
+    doWhileExist('checkInfor', Drainage.Page.checkInfor);
+    doWhileExist('gwsqIndex', Drainage.Page.gwsqIndex);
+    doWhileExist('gwsqJcxx', Drainage.Page.gwsqJcxx);
+})
