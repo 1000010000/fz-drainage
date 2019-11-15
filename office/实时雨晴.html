@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../css/main.min.css">
 </head>
 <body>
-  <div class="gate-pupm" id="gatePump">
+  <div class="real-time" id="realTime">
     <ul class="tab  J_tabClick">
       <li class="tab-item active">
         0.5h
@@ -71,47 +71,39 @@
             </tr>
             <tr>
               <td>测站</td>
-              <td>开启状态</td>
-              <td>闸上</td>
-              <td>闸下</td>
-              <td>站点类型</td>
-              <td>运行状态</td>
-              <td>最大</td>
-              <td>剩余</td>
-              <td>所属河流</td>
+              <td>最新</td>
+              <td>最高</td>
+              <td>累计</td>
+              <td>重现期</td>
+              <td>等级</td>
+              <td>超高警值</td>
             </tr>
             <tr>
-              <td>磨洋河和光明港汇合前</td>
-              <td>关闭</td>
-              <td>4.6</td>
-              <td>4.6</td>
-              <td>闸站</td>
-              <td>正常</td>
+              <td>北岭村</td>
+              <td>2158.8</td>
+              <td>2158.8</td>
+              <td>2158.8</td>
               <td></td>
               <td></td>
-              <td></td>
+              <td>2158.8</td>
             </tr>
             <tr>
-              <td>磨洋河和光明港汇合前</td>
-              <td>关闭</td>
-              <td>4.6</td>
-              <td>4.6</td>
-              <td>闸站</td>
-              <td>正常</td>
+              <td>北岭村</td>
+              <td>2158.8</td>
+              <td>2158.8</td>
+              <td>2158.8</td>
               <td></td>
               <td></td>
-              <td></td>
+              <td>2158.8</td>
             </tr>
             <tr>
-              <td>磨洋河和光明港汇合前</td>
-              <td>关闭</td>
-              <td>4.6</td>
-              <td>4.6</td>
-              <td>闸站</td>
-              <td>正常</td>
+              <td>北岭村</td>
+              <td>2158.8</td>
+              <td>2158.8</td>
+              <td>2158.8</td>
               <td></td>
               <td></td>
-              <td></td>
+              <td>2158.8</td>
             </tr>
           </table>
         </div>
@@ -149,53 +141,71 @@
     <span class="follow-btn ">所有关注</span>
   </div>
   <div class="mask-box J_maskBox"></div>
-    <div class="msg-popup J_msgPopup">
-      <p class="pump-input">
-        <label for="">站名：</label>
-        <input type="text" placeholder="请输入站名/编码进行查询">
-      </p>
-      <div class="select-addr">
-        <p class="select-name">行政区：</p>
-        <ul class="select-list J_listSel">
-          <li class="item active">鼓楼区</li>
-          <li class="item">台江区</li>
-          <li class="item">仓山区</li>
-          <li class="item">仓山区</li>
-          <li class="item">晋安区</li>
-          <li class="item">长乐区</li>
-          <li class="item">闽侯县</li>
-        </ul>
-      </div>
-      <div class="select-addr">
-        <p class="select-name">水系：</p>
-        <ul class="select-list J_listSel">
-          <li class="item active">白马河水系</li>
-          <li class="item">晋安河水系</li>
-          <li class="item">磨洋河水系</li>
-          <li class="item">光明港水系</li>
-          <li class="item">新店片区水系</li>
-          <li class="item">南台岛水系</li>
-        </ul>
-      </div>
-      <div class="select-addr">
-        <p class="select-name">测站类型：</p>
-        <ul class="select-list J_listSel">
-          <li class="item active">闸站</li>
-          <li class="item">泵站</li>
-        </ul>
-      </div>
-      <div class="select-addr">
-        <p class="select-name">开启状态：</p>
-        <ul class="select-list J_listSel">
-          <li class="item active">开启</li>
-          <li class="item">关闭</li>
-        </ul>
-      </div>
-      <div class="invest-btn">
-        <input type="submit" class="invest-cancel J_cancelSel" value="取消">
-        <input type="submit" class="invest-confirm J_confirmSel" value="确定">
-      </div>
+  <div class="msg-popup J_msgPopup">
+  <p class="pump-input">
+      <label for="">站名：</label>
+      <input type="text" placeholder="请输入站名/编码进行查询">
+    </p>
+    <div class="select-addr">
+      <p class="select-name">行政区：</p>
+      <ul class="select-list J_listSel">
+        <li class="item active">鼓楼区</li>
+        <li class="item">台江区</li>
+        <li class="item">仓山区</li>
+        <li class="item">仓山区</li>
+        <li class="item">晋安区</li>
+        <li class="item">长乐区</li>
+        <li class="item">闽侯县</li>
+      </ul>
     </div>
+    <div class="select-addr">
+      <p class="select-name">水系：</p>
+      <ul class="select-list J_listSel">
+        <li class="item active">白马河水系</li>
+        <li class="item">晋安河水系</li>
+        <li class="item">磨洋河水系</li>
+        <li class="item">光明港水系</li>
+        <li class="item">新店片区水系</li>
+        <li class="item">南台岛水系</li>
+      </ul>
+    </div>
+    <div class="select-addr">
+      <p class="select-name">水系：</p>
+      <ul class="select-list J_listSel">
+        <li class="item active">一年以下</li>
+        <li class="item">一年一遇</li>
+        <li class="item">三年一遇</li>
+        <li class="item">五年一遇</li>
+        <li class="item">五年一遇</li>
+        <!-- <li class="item">二十年一遇</li>
+        <li class="item">六十年一遇</li>
+        <li class="item">百年一遇</li> -->
+      </ul>
+    </div>
+    <div class="select-addr">
+      <p class="select-name">降雨等级：</p>
+      <ul class="select-list J_listSel">
+        <li class="item active">特大暴雨</li>
+        <li class="item">大暴雨</li>
+        <li class="item">暴雨</li>
+        <li class="item">大雨</li>
+        <li class="item">中雨</li>
+        <li class="item">小雨</li>
+      </ul>
+    </div>
+    <div class="select-addr">
+      <p class="select-name">超告警：</p>
+      <ul class="select-list J_listSel">
+        <li class="item active">红色</li>
+        <li class="item">橙色</li>
+        <li class="item">黄色</li>
+      </ul>
+    </div>
+    <div class="invest-btn">
+      <input type="submit" class="invest-cancel J_cancelSel" value="取消">
+      <input type="submit" class="invest-confirm J_confirmSel" value="确定">
+    </div>
+  </div>
   <div class="mask">
     <div class="mask-box-site J_maskBoxSite" style="right: 0;"></div>
       <div class="msg-popup-site J_msgPopupSite">

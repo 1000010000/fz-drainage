@@ -93,7 +93,7 @@ var Drainage = {
             })
         },
 
-        //实时雨晴
+        //实时水晴
         realTime: function (id) {
             var dmodule = $('#' + id);
             dmodule.find('.J_tabClick').on('click', 'li', function () {
@@ -102,7 +102,56 @@ var Drainage = {
                 $(this).siblings().children('p').removeClass("active");
                 $(this).addClass("active").siblings().removeClass("active");
                 dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
+            });
+            dmodule.find('.J_selectOnly').click(function () {
+
+                dmodule.find('.J_msgPopup').show()
+                dmodule.find('.J_maskBox').show()
             })
+            dmodule.find('.J_maskBox').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_cancelSel').click(function () {
+                dmodule.find('.J_maskBox').hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_confirmSel ').click(function () {
+                var inputVal = dmodule.find('.pump-input input').val()
+                if(inputVal != ''){
+                    dmodule.find('.J_maskBox').hide()
+                    dmodule.find('.J_msgPopup').hide()
+                } 
+            })
+            dmodule.find('.J_listSel').on('click', 'li', function () {
+                $(this).addClass("active").siblings().removeClass("active");         
+            })
+            dmodule.find('.J_timeSel').click(function () {
+                dmodule.find('.J_msgPopupTime').show()
+                dmodule.find('.J_maskBoxTime').show() 
+            })
+            dmodule.find('.J_maskBoxTime').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopupTime').hide()
+            })
+            // laydate.render({
+            //     elem:  dmodule.find('#test5') ,
+            //     type: 'datetime'
+            // });
+            dmodule.find('.J_follow').on('click', 'span', function () {
+                $(this).addClass("active").siblings().removeClass("active");
+               
+            })
+            dmodule.find('.J_site').click(function () {
+
+                dmodule.find('.J_msgPopupSite').show()
+                dmodule.find('.J_maskBoxSite').show()
+            })
+            dmodule.find('.J_maskBoxSite').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopupSite').hide()
+            })
+             
 
         },
         //闸泵水情
@@ -113,13 +162,48 @@ var Drainage = {
                 $(this).siblings().children('p').removeClass("active");
                 $(this).addClass("active").siblings().removeClass("active");
                 dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
+            })
+            dmodule.find('.J_selectOnly').click(function () {
 
-
-
+                dmodule.find('.J_msgPopup').show()
+                dmodule.find('.J_maskBox').show()
+            })
+            dmodule.find('.J_maskBox').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_cancelSel').click(function () {
+                dmodule.find('.J_maskBox').hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_confirmSel ').click(function () {
+                var inputVal = dmodule.find('.pump-input input').val()
+                if(inputVal != ''){
+                    dmodule.find('.J_maskBox').hide()
+                    dmodule.find('.J_msgPopup').hide()
+                }
+                
+            })
+            dmodule.find('.J_listSel').on('click', 'li', function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                console.log( $(this))
+               
+            })
+            dmodule.find('.J_follow').on('click', 'span', function () {
+                $(this).addClass("active").siblings().removeClass("active");
+               
+            })
+            dmodule.find('.J_timeSel').click(function () {
+                dmodule.find('.J_msgPopupTime').show()
+                dmodule.find('.J_maskBoxTime').show()  
+            })
+            dmodule.find('.J_maskBoxTime').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopupTime').hide()
             })
 
         },
-        // 实时雨晴--基本信息
+        // 实时水晴--基本信息
         basicDetails: function (id) {
             var dmodule = $('#' + id);
             dmodule.find('.J_tabClick').on('click', 'li', function () {
@@ -135,17 +219,87 @@ var Drainage = {
                 })
             })
 
-            dmodule.find('.J_tabClick').click(function () {
-                console.log($(this).children('p'))
+        },
+        // 实时水情
+        waterRegime: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_tabClick').on('click', 'li', function () {
                 $(this).children('p').addClass("active");
                 $(this).siblings().children('p').removeClass("active");
                 $(this).addClass("active").siblings().removeClass("active");
-                dmodule.find(".products .mainCont").eq($(this).index()).show().siblings().hide();
-
+                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
+            })
+            dmodule.find('.J_selectOnly').click(function () {
+                dmodule.find('.J_msgPopup').show()
+                dmodule.find('.J_maskBox').show()
+            })
+            dmodule.find('.J_maskBox').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_cancelSel').click(function () {
+                dmodule.find('.J_maskBox').hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_confirmSel').click(function () {
+                var inputVal = dmodule.find('.pump-input input').val()
+                if(inputVal != ''){
+                    dmodule.find('.J_maskBox').hide()
+                    dmodule.find('.J_msgPopup').hide()
+                }
+                
+            })
+            dmodule.find('.J_listSel').on('click', 'li', function () {
+                $(this).addClass("active").siblings().removeClass("active");
+               
+            })
+            dmodule.find('.J_follow').on('click', 'span', function () {
+                $(this).addClass("active").siblings().removeClass("active");
+               
+            })
+            dmodule.find('.J_timeSel').click(function () {
+                dmodule.find('.J_msgPopupTime').show()
+                dmodule.find('.J_maskBoxTime').show()  
+            })
+            dmodule.find('.J_maskBoxTime').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopupTime').hide()
+            })
+        },
+        // 实时雨晴--基本信息
+        basicRain: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_tabClick').on('click', 'li', function () {
+                $(this).children('p').addClass("active");
+                $(this).siblings().children('p').removeClass("active");
+                $(this).addClass("active").siblings().removeClass("active");
+                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
+            })
+            dmodule.find('.J_screen').click(function () {
+                layer.open({
+                    className: 'screen-popup',
+                    content: '内容'
+                })
             })
 
-        }
+        },
+        // 实时雨晴--基本信息
+        basicPupm: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_tabClick').on('click', 'li', function () {
+                $(this).children('p').addClass("active");
+                $(this).siblings().children('p').removeClass("active");
+                $(this).addClass("active").siblings().removeClass("active");
+                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
+            })
+            dmodule.find('.J_screen').click(function () {
+                layer.open({
+                    className: 'screen-popup',
+                    content: '内容'
+                })
+            })
 
+        },
 
     }
 }
@@ -165,6 +319,9 @@ $(function () {
     doWhileExist('basicDetails', Drainage.Page.basicDetails);
     doWhileExist('screenRyTj', Drainage.Page.screenRyTj);
     doWhileExist('riverList', Drainage.Page.riverList);
+    doWhileExist('waterRegime', Drainage.Page.waterRegime);
+    doWhileExist('basicRain', Drainage.Page.basicRain);
+    doWhileExist('basicPupm', Drainage.Page.basicPupm);
 })
 
 
