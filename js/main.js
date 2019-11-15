@@ -311,7 +311,7 @@ var Drainage = {
                     content: '内容'
                 })
             })
-
+        },
 
         //管网水情-index
         gwsqIndex: function (id) {
@@ -392,9 +392,6 @@ $(function () {
     doWhileExist('waterRegime', Drainage.Page.waterRegime);
     doWhileExist('basicRain', Drainage.Page.basicRain);
     doWhileExist('basicPupm', Drainage.Page.basicPupm);
-})
-
-
     doWhileExist('checkInfor', Drainage.Page.checkInfor);
     doWhileExist('gwsqIndex', Drainage.Page.gwsqIndex);
     doWhileExist('gwsqJcxx', Drainage.Page.gwsqJcxx);
