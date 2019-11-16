@@ -1364,6 +1364,50 @@ input::placeholder {
   display: block;
 }
 
+.footer {
+  height: 120px;
+}
+
+.footer .main {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.footer .main .item {
+  margin: 0 12px;
+  width: 172px;
+  line-height: 72px;
+  box-shadow: 0px 0px 10px 0px #e1e7f0;
+  color: #333333;
+  font-size: 34px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.footer .main .item.active {
+  background: #5BA9FF;
+  color: #FFF;
+}
+
+.slide-bar-left {
+  width: 86px;
+  height: 86px;
+  position: fixed;
+  bottom: 150px;
+  left: 30px;
+  z-index: 102;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  background: #FFF url(../images/icons/add.png) no-repeat center;
+  background-size: 42px 42px;
+}
+
 .basic-pupm .tab {
   height: 100px;
   line-height: 100px;
@@ -1500,37 +1544,6 @@ input::placeholder {
   background-color: #F8F9FE;
 }
 
-.basic-pupm .products .main-cont .footer {
-  height: 120px;
-}
-
-.basic-pupm .products .main-cont .footer .main {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 24px 0;
-}
-
-.basic-pupm .products .main-cont .footer .main .item {
-  margin: 0 12px;
-  width: 172px;
-  line-height: 72px;
-  box-shadow: 0px 0px 10px 0px #e1e7f0;
-  color: #333333;
-  font-size: 34px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.basic-pupm .products .main-cont .footer .main .item.active {
-  background: #5BA9FF;
-  color: #FFF;
-}
-
 .time-pop-up {
   width: 550px;
   background: #FFF;
@@ -1657,23 +1670,86 @@ input::placeholder {
   color: #FFF;
 }
 
-.gwsq-jcxx .menu {
+.gwsq-jcxx .menu-box {
+  height: 100px;
+}
+
+.gwsq-jcxx .menu-box .menu {
+  position: fixed;
+  z-index: 105;
+  top: 0;
+  left: 0;
+  background: #FFF;
+  width: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
 
-.gwsq-jcxx .menu .item {
+.gwsq-jcxx .menu-box .menu .item {
   flex: 1;
   text-align: center;
 }
 
-.gwsq-jcxx .menu .item.active:after {
+.gwsq-jcxx .menu-box .menu .item.active:after {
   width: 10%;
 }
 
-.gwsq-jcxx .menu.selected {
+.gwsq-jcxx .menu-box .menu.selected {
   display: block;
+}
+
+.gwsq-jcxx .tab-main {
+  margin: 0 30px;
+}
+
+.gwsq-jcxx .tab-main .top-tips {
+  padding: 20px 0 28px;
+  color: #ABABAB;
+  font-size: 26px;
+  text-align: center;
+}
+
+.gwsq-jcxx .tab-main .top-tips .title {
+  color: #333333;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.gwsq-jcxx .tab-main .details-data {
+  height: 430px;
+  background: #5AA9FF;
+}
+
+.gwsq-jcxx .tab-main .data-time {
+  margin: 38px 0 25px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+  color: #ABABAB;
+  font-size: 28px;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll .main {
+  width: 100%;
+  display: table;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll .main tr:nth-child(even) {
+  background-color: #FFF;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll .main tr:nth-child(2n-1) {
+  background-color: #F8F9FF;
+}
+
+.gwsq-jcxx .tab-main .infor-list .item {
+  line-height: 96px;
+  border-bottom: 1px solid #E5E5E5;
+  padding-left: 30px;
+  color: #333333;
+  font-size: 28px;
 }
 
 .office-weather .title-x {
@@ -1706,28 +1782,6 @@ input::placeholder {
 .office-weather .msg p {
   margin-bottom: 6px;
   color: #555;
-}
-
-.office-weather .msg p .tab-main {
-  margin: 0 30px;
-}
-
-.office-weather .msg p .tab-main .top-tips {
-  padding: 20px 0 28px;
-  color: #ABABAB;
-  font-size: 26px;
-  text-align: center;
-}
-
-.office-weather .msg p .tab-main .top-tips .title {
-  color: #333333;
-  font-size: 30px;
-  margin-bottom: 18px;
-}
-
-.office-weather .msg p .tab-main .details-data {
-  height: 430px;
-  background: #5AA9FF;
 }
 
 .office-weather .msg p .right-nav {
@@ -2482,36 +2536,6 @@ input::placeholder {
 
 .office-weather .real-time .mask .msg-popup-site .site-adr-scroll .site-list .item {
   color: #333;
-  font-size: 28px;
-}
-
-.office-weather .real-time .data-time {
-  margin: 38px 0 25px;
-  display: flex;
-  justify-content: space-between;
-  line-height: 30px;
-  color: #ABABAB;
-  font-size: 28px;
-}
-
-.office-weather .real-time .table-list-scroll .main {
-  width: 100%;
-  display: table;
-}
-
-.office-weather .real-time .table-list-scroll .main tr:nth-child(even) {
-  background-color: #FFF;
-}
-
-.office-weather .real-time .table-list-scroll .main tr:nth-child(2n-1) {
-  background-color: #F8F9FF;
-}
-
-.office-weather .real-time .infor-list .item {
-  line-height: 96px;
-  border-bottom: 1px solid #E5E5E5;
-  padding-left: 30px;
-  color: #333333;
   font-size: 28px;
 }
 

@@ -1488,6 +1488,50 @@ input {
     }
 }
 
+.footer {
+    height: 120px;
+
+    .main {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 24px 0;
+
+        .item {
+            margin: 0 12px;
+            width: 172px;
+            line-height: 72px;
+            box-shadow: 0px 0px 10px 0px #e1e7f0;
+            color: #333333;
+            font-size: 34px;
+            border-radius: 8px;
+            text-align: center;
+
+            &.active {
+                background: #5BA9FF;
+                color: #FFF;
+            }
+        }
+    }
+}
+
+.slide-bar-left {
+    width: 86px;
+    height: 86px;
+    position: fixed;
+    bottom: 150px;
+    left: 30px;
+    z-index: 102;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .1);
+    background: #FFF url(../images/icons/add.png) no-repeat center;
+    background-size: 42px 42px;
+}
+
 // 闸泵水情基本信息
 .basic-pupm {
     .tab {
@@ -1626,37 +1670,6 @@ input {
 
                     tr:nth-child(odd) {
                         background-color: #F8F9FE;
-                    }
-                }
-            }
-
-            .footer {
-                height: 120px;
-
-                .main {
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    z-index: 100;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    padding: 24px 0;
-
-                    .item {
-                        margin: 0 12px;
-                        width: 172px;
-                        line-height: 72px;
-                        box-shadow: 0px 0px 10px 0px #e1e7f0;
-                        color: #333333;
-                        font-size: 34px;
-                        border-radius: 8px;
-                        text-align: center;
-
-                        &.active {
-                            background: #5BA9FF;
-                            color: #FFF;
-                        }
                     }
                 }
             }
@@ -1799,24 +1812,92 @@ input {
 
 //管网水情-监测信息
 .gwsq-jcxx {
-    .menu {
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
+    .menu-box {
+        height: 100px;
 
-        .item {
-            flex: 1;
+        .menu {
+            position: fixed;
+            z-index: 105;
+            top: 0;
+            left: 0;
+            background: #FFF;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+
+            .item {
+                flex: 1;
+                text-align: center;
+
+                &.active:after {
+                    width: 10%;
+                }
+            }
+
+            &.selected {
+                display: block;
+            }
+        }
+    }
+
+    .tab-main {
+        margin: 0 30px;
+
+        .top-tips {
+            padding: 20px 0 28px;
+            color: #ABABAB;
+            font-size: 26px;
             text-align: center;
 
-            &.active:after {
-                width: 10%;
+            .title {
+                color: #333333;
+                font-size: 30px;
+                margin-bottom: 18px;
             }
         }
 
-        &.selected {
-            display: block;
+        .details-data {
+            height: 430px;
+            background: #5AA9FF;
+        }
+
+        .data-time {
+            margin: 38px 0 25px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 30px;
+            color: #ABABAB;
+            font-size: 28px;
+        }
+
+        .table-list-scroll {
+            .main {
+                width: 100%;
+                display: table;
+
+                tr:nth-child(even) {
+                    background-color: #FFF;
+                }
+
+                tr:nth-child(2n-1) {
+                    background-color: #F8F9FF;
+                }
+            }
+        }
+
+        .infor-list {
+            .item {
+                line-height: 96px;
+                border-bottom: 1px solid #E5E5E5;
+                padding-left: 30px;
+                color: #333333;
+                font-size: 28px;
+            }
         }
     }
+
 }
 
 //气象消息
@@ -1853,27 +1934,7 @@ input {
             margin-bottom: 6px;
             color: #555;
 
-            .tab-main {
-                margin: 0 30px;
 
-                .top-tips {
-                    padding: 20px 0 28px;
-                    color: #ABABAB;
-                    font-size: 26px;
-                    text-align: center;
-
-                    .title {
-                        color: #333333;
-                        font-size: 30px;
-                        margin-bottom: 18px;
-                    }
-                }
-
-                .details-data {
-                    height: 430px;
-                    background: #5AA9FF;
-                }
-            }
 
             .right-nav {
                 right: 10px;
@@ -2668,39 +2729,7 @@ input {
             }
         }
 
-        .data-time {
-            margin: 38px 0 25px;
-            display: flex;
-            justify-content: space-between;
-            line-height: 30px;
-            color: #ABABAB;
-            font-size: 28px;
-        }
 
-        .table-list-scroll {
-            .main {
-                width: 100%;
-                display: table;
-
-                tr:nth-child(even) {
-                    background-color: #FFF;
-                }
-
-                tr:nth-child(2n-1) {
-                    background-color: #F8F9FF;
-                }
-            }
-        }
-
-        .infor-list {
-            .item {
-                line-height: 96px;
-                border-bottom: 1px solid #E5E5E5;
-                padding-left: 30px;
-                color: #333333;
-                font-size: 28px;
-            }
-        }
     }
 }
 
