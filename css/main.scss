@@ -37,6 +37,13 @@ input {
 }
 
 .base {
+    &.map-mark{
+        .title{
+            padding: 26px;
+            background: #fff;
+            border-radius: 8px;
+        }
+    }
     &.nav-bar {
         height: 100px;
         position: fixed;

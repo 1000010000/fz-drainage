@@ -1,5 +1,70 @@
 var Drainage = {
     Page: {
+        //车辆
+        officeVehicle:function(id){
+            var dmodule = $('#' + id);
+            var map = new AMap.Map('container', {
+                resizeEnable: true,
+                center: [121.441071, 31.216294],
+                zoom: 10,
+                showLabel: false,
+                expandZoomRange: true,
+            });
+            var logMapinfo = function () {
+                var markers = [];
+             
+                    markers = [{
+                        position: [121.722616, 31.405467],
+                        content: "<div class='info'><div class='title_div'><span>长兴岛郊野公园</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                    },
+                    {
+                        position: [121.521108, 31.46795],
+                        content: "<div class='info'><div class='title_div'><span>光明头</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                    },
+                    {
+                        position: [121.533468, 31.389439],
+                        content: "<a href='./monitoring/video.html' class='title_link'><div class='info'><div class='title_div'><span>电视塔</span><span>视频资源： 20个</span></div><div class='arrow'></div><img src='../images/icons/jiankong.png' alt='监控'></div></a>"
+                    },
+                    {
+                        position: [121.511958, 31.239103],
+                        content: "<div class='info'><div class='title_div'><span>东方明珠</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/tobig.png' alt='暴雨'></div>"
+                    },
+                    {
+                        position: [121.431204, 31.243453],
+                        content: "<div class='info'><div class='title_div'><span>外滩18</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                    },
+                    {
+                        position: [121.428371, 31.193829],
+                        content: "<div class='info'><div class='title_div'><span>上海司法厅</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                    },
+                    {
+                        position: [121.472815, 31.412247],
+                        content: "<div class='info'><div class='title_div'><span>上海城建学院</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                    },
+                    {
+                        position: [121.386865, 31.2834],
+                        content: "<div class='info'><div class='title_div'><span>桃浦大楼</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                    },
+                    {
+                        position: [121.418485, 31.202417],
+                        content: "<a href='../video.html' class='title_link'><div class='info'><div class='title_div'><span>宋园路</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/tobig.png' alt='小雨'></div></a>"
+                    },
+                    ];
+
+                    markers.map(function (marker) {
+                        new AMap.Marker({
+                            map: map,
+                            icon: marker.icon,
+                            position: [marker.position[0], marker.position[1]],
+                            offset: new AMap.Pixel(-13, -30),
+                            content: marker.content, //设置文本标注内容
+                            direction: 'right' //设置文本标注方位
+                        });
+                    });
+                }
+            logMapinfo()
+        },
+
         //办公-人员
         officeRy: function (id) {
             var dmodule = $('#' + id);
@@ -395,4 +460,5 @@ $(function () {
     doWhileExist('checkInfor', Drainage.Page.checkInfor);
     doWhileExist('gwsqIndex', Drainage.Page.gwsqIndex);
     doWhileExist('gwsqJcxx', Drainage.Page.gwsqJcxx);
+    doWhileExist('officeVehicle', Drainage.Page.officeVehicle);
 })
