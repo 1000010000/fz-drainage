@@ -1303,6 +1303,17 @@ input::placeholder {
   display: none;
 }
 
+.page-gwsq .tab-main .no-data {
+  margin: 190px 0 50px;
+  text-align: center;
+  color: #D1D1D1;
+  font-size: 32px;
+  line-height: 50px;
+  background: url(../images/icons/no-num.png) no-repeat center top;
+  background-size: 160px 160px;
+  padding-top: 180px;
+}
+
 .page-gwsq .tab-main .time-tips {
   text-align: center;
   line-height: 92px;
@@ -1568,6 +1579,12 @@ input::placeholder {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  line-height: 35px;
+}
+
+.time-pop-up .box-time .item .input {
+  width: 235px;
+  font-size: 30px;
 }
 
 .time-pop-up .box-time .item .icon {
@@ -1590,6 +1607,7 @@ input::placeholder {
   border-right: 1px solid #BBBBBB;
   color: #999999;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .time-pop-up .box-btn .btn:last-child {
@@ -1656,6 +1674,33 @@ input::placeholder {
 
 .choice-pop-up .list-box .list.state .item:last-child {
   margin-right: 0;
+}
+
+.choice-pop-up .list-box .list.yujing .item {
+  width: auto;
+  border: none;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.choice-pop-up .list-box .list.yujing .item .color {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+.choice-pop-up .list-box .list.yujing .item .color.red {
+  background: #C53E34;
+}
+
+.choice-pop-up .list-box .list.yujing .item .color.orange {
+  background: #E98131;
+}
+
+.choice-pop-up .list-box .list.yujing .item .color.yellow {
+  background: #E9DE36;
 }
 
 .choice-pop-up .btn-box {
@@ -1748,6 +1793,31 @@ input::placeholder {
 
 .gwsq-jcxx .tab-main .table-list-scroll .main tr:nth-child(2n-1) {
   background-color: #F8F9FF;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll .main th {
+  padding: 0;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll .main td {
+  padding: 0;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll.shuizhi {
+  width: auto;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll.shuizhi .main {
+  width: auto;
+  display: -webkit-box;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll.shuizhi .main th {
+  padding: 0 20px;
+}
+
+.gwsq-jcxx .tab-main .table-list-scroll.shuizhi .main td {
+  padding: 0 20px;
 }
 
 .gwsq-jcxx .tab-main .infor-list .item {
@@ -2545,9 +2615,61 @@ input::placeholder {
   font-size: 28px;
 }
 
+.zhandian-pop-up {
+  width: 505px;
+  height: 100%;
+  overflow-y: scroll;
+  background: #FFF;
+  color: #333333;
+  font-size: 28px;
+}
+
+.zhandian-pop-up .search-box {
+  height: 172px;
+}
+
+.zhandian-pop-up .search-box .main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 505px;
+  height: 172px;
+  z-index: 101;
+  background: #FFF;
+}
+
+.zhandian-pop-up .search-box .main .title {
+  line-height: 80px;
+  font-size: 32px;
+  padding-left: 30px;
+}
+
+.zhandian-pop-up .search-box .main .input {
+  display: block;
+  width: 445px;
+  height: 62px;
+  margin: 0 auto 30px;
+  box-shadow: 0px 0px 10px 0px #e1e7f0;
+  padding-left: 24px;
+  font-size: 28px;
+}
+
+.zhandian-pop-up .list {
+  overflow: hidden;
+}
+
+.zhandian-pop-up .list .item {
+  line-height: 75px;
+  padding-left: 25px;
+}
+
+.zhandian-pop-up .list .item.active {
+  background: #F8F9FE;
+}
+
 .slide-bar {
   position: fixed;
-  z-index: 101;
+  z-index: 200;
   right: 0;
   top: 0;
 }
