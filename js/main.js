@@ -328,10 +328,89 @@ var Drainage = {
                 layer.open({
                     type: 1,
                     className: 'layer-box',
-                    content: _html
+                    content: _html,
+                    success: function(){     
+                        $('.J_startTime').shijian()
+                        $('.J_endTime').shijian()
+                    }    
                 })
+                
             })            
             
+            dmodule.on('click', '.J_screenBtn', function () {
+                var _html = $('.J_choicePopUp').html();
+                layer.open({
+                    type: 1,
+                    className: 'layer-box',
+                    content: _html,
+                    anim: 'down',
+                    style: 'position:fixed; top:0; width:100%; display:table;'
+                })
+            })
+
+            //站点
+            dmodule.on('click', '.J_zhandianBtn', function () {
+                var _html = $('.J_zhandianPopUp').html();
+                layer.open({
+                    type: 1,
+                    className: 'layer-box',
+                    content: _html,
+                    anim: 'down',
+                    style: 'position:fixed; top:0; right:0; height: 100%; overflow-y: scroll;'
+                })
+            })
+            $('body').on('click', '.J_zhandianList .item', function () {
+                $(this).addClass('active').siblings().removeClass('active')
+            })  
+            $('body').on('input', '.J_zhandianInput', function () {
+                if($(this).val()!=''){
+                    $.ajax({
+						type: "get",
+						url: "data.json", //接口
+						data: {
+
+						},
+						dataType: "json",
+						beforeSend: function() {},
+						success: function(data) {
+							var inforHtml = "";
+							for(var i = 0; i < data.productList.length; i++) {
+								inforHtml += '<li class="item">' + data.productList[i].proName + '</li>';
+							}
+							$('.J_zhandianList').html(inforHtml);
+						}
+					});
+                }
+            })     
+               
+
+            $('body').on('click', '.J_popClose .btn', function () {
+                layer.closeAll()
+                //确认
+                if ($(this).hasClass('active')) {
+                    alert('提交') //确认执行事件
+                }
+            })
+
+            $('body').on('click', '.J_listBox .list .item', function () {
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+
+            $('body').on('click', '.J_startTime', function () {
+                layer.closeAll()
+            })     
+
+        },
+
+        //管网水情-监测信息
+        gwsqJcxx: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_gwsqJcxx').on('click', '.menu li', function () {
+                $('.J_gwsqJcxx .menu li').attr('class', 'item');
+                $(this).addClass('active');
+                $('.J_gwsqJcxx .tab-main').hide().eq($(this).index()).show();
+            })
+
             dmodule.on('click', '.J_screenBtn', function () {
                 var _html = $('.J_choicePopUp').html();
                 layer.open({
@@ -355,20 +434,6 @@ var Drainage = {
                 $(this).addClass('active').siblings().removeClass('active')
             })
 
-            $('body').on('click', '.J_timeBtn', function () {
-                alert(2)
-            })            
-
-        },
-
-        //管网水情-监测信息
-        gwsqJcxx: function (id) {
-            var dmodule = $('#' + id);
-            dmodule.find('.J_gwsqJcxx').on('click', '.menu li', function () {
-                $('.J_gwsqJcxx .menu li').attr('class', 'item');
-                $(this).addClass('active');
-                $('.J_gwsqJcxx .tab-main').hide().eq($(this).index()).show();
-            })
         },
 
     }
