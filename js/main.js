@@ -1,6 +1,8 @@
 var Drainage = {
-    Base: {
-        setMarke: function () {
+    Page: {
+        //车辆
+        officeVehicle: function (id) {
+            var dmodule = $('#' + id);
             var infoWindow;
             var token = getToken();
             var params = new URLSearchParams();
@@ -53,7 +55,7 @@ var Drainage = {
                     y: 31.405467
                 },
             ]
-            markerList.map(function(item){
+            markerList.map(function (item) {
                 var marker = new AMap.Marker({
                     map: map,
                     icon: markerIcon,
@@ -69,13 +71,6 @@ var Drainage = {
                     showInfo(marker, item)
                 })
             })
-        }
-    },
-    Page: {
-        //车辆
-        officeVehicle: function (id) {
-            var dmodule = $('#' + id);
-            Drainage.Base.setMarke()
 
         },
 
