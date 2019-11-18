@@ -469,9 +469,13 @@ var Drainage = {
                 $(this).addClass('active').siblings().removeClass('active')
             })
 
-            $('body').on('click', '.J_startTime', function () {
-                layer.closeAll()
-            })     
+            //底部按钮
+            dmodule.find('.J_footerBtn').on('click', '.main .item', function () {
+                $(this).addClass('active').siblings().removeClass('active')
+                //这里写触发事件
+            })
+                
+
 
         },
 

@@ -293,6 +293,17 @@ input::placeholder {
   zoom: 200%;
   vertical-align: middle;
   margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url(../images/icons/checkbox-no.png);
+}
+
+.screen-rytj .msg-popup input[type=checkbox]:checked {
+  background-image: url(../images/icons/checkbox.png);
 }
 
 .screen-rytj .msg-popup .list-box {
@@ -1420,6 +1431,7 @@ input::placeholder {
 }
 
 .footer .main .item {
+  cursor: pointer;
   margin: 0 12px;
   width: 172px;
   line-height: 72px;

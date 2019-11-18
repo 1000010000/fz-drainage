@@ -223,6 +223,7 @@ input {
         display: none;
 
         input[type=checkbox] {
+
             zoom: 200%;
             vertical-align: middle;
             margin-right: 4px;
@@ -310,6 +311,17 @@ input {
             zoom: 200%;
             vertical-align: middle;
             margin-right: 4px;
+            width: 16px;
+            height: 16px;
+            -webkit-appearance: none;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url(../images/icons/checkbox-no.png);
+
+            &:checked {
+                background-image: url(../images/icons/checkbox.png);
+            }
         }
 
         .list-box {
@@ -1545,6 +1557,7 @@ input {
         padding: 24px 0;
 
         .item {
+            cursor: pointer;
             margin: 0 12px;
             width: 172px;
             line-height: 72px;
