@@ -24,7 +24,7 @@ input,
 textarea {
     outline: none;
     border: none;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 input {
@@ -32,6 +32,7 @@ input {
         color: #d1d1d1;
     }
 }
+
 address,
 caption,
 cite,
@@ -44,9 +45,11 @@ var {
     font-style: normal;
     font-weight: normal;
 }
+
 :focus {
     outline: 1;
 }
+
 h1,
 h2,
 h3,
@@ -56,12 +59,33 @@ h6 {
     font-size: 100%;
     font-weight: normal;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 #container {
     height: 100vh;
+}
+
+.amap-info-close {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+    right: 6px !important;
+    top: 6px;
+}
+
+.amap-info-content {
+    padding: 16px;
+    color: #B0B0B0;
+    line-height: 40px;
+    white-space: nowrap;
+    b {
+        color: #333;
+        font-weight: normal;
+    }
 }
 
 .base {
@@ -250,22 +274,22 @@ table {
         color: #333;
         display: none;
 
-      input[type=checkbox] {
-          zoom: 200%;
-          vertical-align: middle;
-          margin-right: 4px;
-          width: 16px;
-          height: 16px;
-          -webkit-appearance: none;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          background-image: url(../images/icons/checkbox-no.png);
+        input[type=checkbox] {
+            zoom: 200%;
+            vertical-align: middle;
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+            -webkit-appearance: none;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url(../images/icons/checkbox-no.png);
 
-          &:checked {
-              background-image: url(../images/icons/checkbox.png);
-          }
-      }
+            &:checked {
+                background-image: url(../images/icons/checkbox.png);
+            }
+        }
 
         .list-box {
             display: flex;
@@ -289,7 +313,7 @@ table {
         position: fixed;
         right: 0;
         bottom: 30px;
-        width: 270px;
+        min-width: 270px;
         background: #fff;
         border-radius: 4px;
         font-size: 26px;

@@ -67,6 +67,26 @@ table {
   height: 100vh;
 }
 
+.amap-info-close {
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  right: 6px !important;
+  top: 6px;
+}
+
+.amap-info-content {
+  padding: 16px;
+  color: #B0B0B0;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.amap-info-content b {
+  color: #333;
+  font-weight: normal;
+}
+
 .base.map-mark .title {
   padding: 16px;
   background: #fff;
@@ -277,7 +297,7 @@ table {
   position: fixed;
   right: 0;
   bottom: 30px;
-  width: 270px;
+  min-width: 270px;
   background: #fff;
   border-radius: 4px;
   font-size: 26px;

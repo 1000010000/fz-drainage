@@ -1,8 +1,11 @@
 var Drainage = {
-    Page: {
-        //车辆
-        officeVehicle:function(id){
-            var dmodule = $('#' + id);
+    Base: {
+        setMarke: function () {
+            var infoWindow;
+            var token = getToken();
+            var params = new URLSearchParams();
+            params.append('token', token);
+
             var map = new AMap.Map('container', {
                 resizeEnable: true,
                 center: [121.441071, 31.216294],
@@ -10,63 +13,70 @@ var Drainage = {
                 showLabel: false,
                 expandZoomRange: true,
             });
-            var logMapinfo = function () {
-                var markers = [];
-             
-                    markers = [{
-                        position: [121.722616, 31.405467],
-                        content: "<div class='base map-mark'><div class='title'><p class='t'>鼓楼区建设局龙吸水字母3000</p><p>车牌：闽A711KA</p><p>所属单位：福州市城区水系联排联调中心</p><p>定位时间：2019-10-31 14:59</p></div><div class='arrow'></div><img src='../images/icons/small.png' alt='车辆' class='J_markers'></div>"
-                    },
-                    {
-                        position: [121.521108, 31.46795],
-                        content: "<div class='info'><div class='title_div'><p>光明头</p><p>当前水位： 0.0m</p><p>2019-10-21 16:40</p></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
-                    },
-                    {
-                        position: [121.533468, 31.389439],
-                        content: "<a href='./monitoring/video.html' class='title_link'><div class='info'><div class='title_div'><span>电视塔</span><span>视频资源： 20个</span></div><div class='arrow'></div><img src='../images/icons/jiankong.png' alt='监控'></div></a>"
-                    },
-                    {
-                        position: [121.511958, 31.239103],
-                        content: "<div class='info'><div class='title_div'><span>东方明珠</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/tobig.png' alt='暴雨'></div>"
-                    },
-                    {
-                        position: [121.431204, 31.243453],
-                        content: "<div class='info'><div class='title_div'><span>外滩18</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
-                    },
-                    {
-                        position: [121.428371, 31.193829],
-                        content: "<div class='info'><div class='title_div'><span>上海司法厅</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
-                    },
-                    {
-                        position: [121.472815, 31.412247],
-                        content: "<div class='info'><div class='title_div'><span>上海城建学院</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
-                    },
-                    {
-                        position: [121.386865, 31.2834],
-                        content: "<div class='info'><div class='title_div'><span>桃浦大楼</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
-                    },
-                    {
-                        position: [121.418485, 31.202417],
-                        content: "<a href='../video.html' class='title_link'><div class='info'><div class='title_div'><span>宋园路</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/tobig.png' alt='小雨'></div></a>"
-                    },
-                    ];
 
-                    markers.map(function (marker) {
-                        var marker =   new AMap.Marker({
-                            map: map,
-                            icon: marker.icon,
-                            position: [marker.position[0], marker.position[1]],
-                            offset: new AMap.Pixel(-13, -30),
-                            content: marker.content, //设置文本标注内容
-                            direction: 'right' //设置文本标注方位
-                        });
-                        marker.on('click', function () {
-                            // alert(33)
-                        })
-                    });
-                }
-            logMapinfo()
-           
+            // 创建一个 icon
+            var markerIcon = new AMap.Icon({
+                size: new AMap.Size(36, 36),
+                image: '../images/icons/icon_car.png',
+                imageSize: new AMap.Size(36, 36),
+            });
+
+            function showInfo(marker, params) {
+                console.log(marker, params, marker.getPosition());
+                // https://lbs.amap.com/api/javascript-api/reference/infowindow
+                // https://lbs.amap.com/api/javascript-api/example/infowindow/default-style-infowindow
+                //构建信息窗体中显示的内容
+                var info = [];
+                info.push("<p><b>鼓楼区建设局龙吸水字母3000</b></p>");
+                info.push("<p>车牌：闽A711KA</p>");
+                info.push("<p>所属单位：福州市城区水系联排联调中心</p>");
+                info.push("<p>定位时间：2019-10-31 14:59</p>");
+
+                infoWindow = new AMap.InfoWindow({
+                    anchor: "bottom-center",
+                    closeWhenClickMap: true,
+                    retainWhenClose: true,
+                    offset: new AMap.Pixel(-13, -30),
+                    content: info.join("") //使用默认信息窗体框样式，显示信息内容
+                });
+                infoWindow.open(map, marker.getPosition());
+            }
+            var markerList = [
+                {
+                    x: 121.511958,
+                    y: 31.239103
+                }, {
+                    x: 121.428371,
+                    y: 31.193829
+                }, {
+                    x: 121.722616,
+                    y: 31.405467
+                },
+            ]
+            markerList.map(function(item){
+                var marker = new AMap.Marker({
+                    map: map,
+                    icon: markerIcon,
+                    clickable: true,
+                    position: [item.x, item.y],
+                    // 以 icon 的 [center bottom] 为原点
+                    offset: new AMap.Pixel(-13, -30),
+                    direction: 'center', //设置文本标注方位
+                    anchor: "center"
+                });
+                // 添加标记事件
+                AMap.event.addListener(marker, "click", function (e) {
+                    showInfo(marker, item)
+                })
+            })
+        }
+    },
+    Page: {
+        //车辆
+        officeVehicle: function (id) {
+            var dmodule = $('#' + id);
+            Drainage.Base.setMarke()
+
         },
 
         //办公-人员
@@ -96,7 +106,7 @@ var Drainage = {
 
                 dmodule.find('.J_msgPopup').show()
                 dmodule.find('.J_maskBox').show()
-            })  
+            })
             dmodule.find('.J_stateBtn').click(function () {
                 dmodule.find('.J_statePopup').show()
                 dmodule.find('.J_maskBox').show()
@@ -205,17 +215,17 @@ var Drainage = {
             })
             dmodule.find('.J_confirmSel ').click(function () {
                 var inputVal = dmodule.find('.pump-input input').val()
-                if(inputVal != ''){
+                if (inputVal != '') {
                     dmodule.find('.J_maskBox').hide()
                     dmodule.find('.J_msgPopup').hide()
-                } 
+                }
             })
             dmodule.find('.J_listSel').on('click', 'li', function () {
-                $(this).addClass("active").siblings().removeClass("active");         
+                $(this).addClass("active").siblings().removeClass("active");
             })
             dmodule.find('.J_timeSel').click(function () {
                 dmodule.find('.J_msgPopupTime').show()
-                dmodule.find('.J_maskBoxTime').show() 
+                dmodule.find('.J_maskBoxTime').show()
             })
             dmodule.find('.J_maskBoxTime').click(function () {
                 $(this).hide()
@@ -227,7 +237,7 @@ var Drainage = {
             // });
             dmodule.find('.J_follow').on('click', 'span', function () {
                 $(this).addClass("active").siblings().removeClass("active");
-               
+
             })
             dmodule.find('.J_site').click(function () {
 
@@ -238,7 +248,7 @@ var Drainage = {
                 $(this).hide()
                 dmodule.find('.J_msgPopupSite').hide()
             })
-             
+
 
         },
         //闸泵水情
@@ -265,24 +275,24 @@ var Drainage = {
             })
             dmodule.find('.J_confirmSel ').click(function () {
                 var inputVal = dmodule.find('.pump-input input').val()
-                if(inputVal != ''){
+                if (inputVal != '') {
                     dmodule.find('.J_maskBox').hide()
                     dmodule.find('.J_msgPopup').hide()
                 }
-                
+
             })
             dmodule.find('.J_listSel').on('click', 'li', function () {
                 $(this).addClass("active").siblings().removeClass("active");
-                console.log( $(this))
-               
+                console.log($(this))
+
             })
             dmodule.find('.J_follow').on('click', 'span', function () {
                 $(this).addClass("active").siblings().removeClass("active");
-               
+
             })
             dmodule.find('.J_timeSel').click(function () {
                 dmodule.find('.J_msgPopupTime').show()
-                dmodule.find('.J_maskBoxTime').show()  
+                dmodule.find('.J_maskBoxTime').show()
             })
             dmodule.find('.J_maskBoxTime').click(function () {
                 $(this).hide()
@@ -330,23 +340,23 @@ var Drainage = {
             })
             dmodule.find('.J_confirmSel').click(function () {
                 var inputVal = dmodule.find('.pump-input input').val()
-                if(inputVal != ''){
+                if (inputVal != '') {
                     dmodule.find('.J_maskBox').hide()
                     dmodule.find('.J_msgPopup').hide()
                 }
-                
+
             })
             dmodule.find('.J_listSel').on('click', 'li', function () {
                 $(this).addClass("active").siblings().removeClass("active");
-               
+
             })
             dmodule.find('.J_follow').on('click', 'span', function () {
                 $(this).addClass("active").siblings().removeClass("active");
-               
+
             })
             dmodule.find('.J_timeSel').click(function () {
                 dmodule.find('.J_msgPopupTime').show()
-                dmodule.find('.J_maskBoxTime').show()  
+                dmodule.find('.J_maskBoxTime').show()
             })
             dmodule.find('.J_maskBoxTime').click(function () {
                 $(this).hide()
@@ -403,14 +413,14 @@ var Drainage = {
                     type: 1,
                     className: 'layer-box',
                     content: _html,
-                    success: function(){     
+                    success: function () {
                         $('.J_startTime').shijian()
                         $('.J_endTime').shijian()
-                    }    
+                    }
                 })
-                
-            })            
-            
+
+            })
+
             dmodule.on('click', '.J_screenBtn', function () {
                 var _html = $('.J_choicePopUp').html();
                 layer.open({
@@ -435,28 +445,28 @@ var Drainage = {
             })
             $('body').on('click', '.J_zhandianList .item', function () {
                 $(this).addClass('active').siblings().removeClass('active')
-            })  
+            })
             $('body').on('input', '.J_zhandianInput', function () {
-                if($(this).val()!=''){
+                if ($(this).val() != '') {
                     $.ajax({
-						type: "get",
-						url: "data.json", //接口
-						data: {
+                        type: "get",
+                        url: "data.json", //接口
+                        data: {
 
-						},
-						dataType: "json",
-						beforeSend: function() {},
-						success: function(data) {
-							var inforHtml = "";
-							for(var i = 0; i < data.productList.length; i++) {
-								inforHtml += '<li class="item">' + data.productList[i].proName + '</li>';
-							}
-							$('.J_zhandianList').html(inforHtml);
-						}
-					});
+                        },
+                        dataType: "json",
+                        beforeSend: function () { },
+                        success: function (data) {
+                            var inforHtml = "";
+                            for (var i = 0; i < data.productList.length; i++) {
+                                inforHtml += '<li class="item">' + data.productList[i].proName + '</li>';
+                            }
+                            $('.J_zhandianList').html(inforHtml);
+                        }
+                    });
                 }
-            })     
-               
+            })
+
 
             $('body').on('click', '.J_popClose .btn', function () {
                 layer.closeAll()
@@ -475,7 +485,7 @@ var Drainage = {
                 $(this).addClass('active').siblings().removeClass('active')
                 //这里写触发事件
             })
-                
+
 
 
         },
@@ -531,7 +541,7 @@ var Drainage = {
 
         }
 
-    
+
 
     }
 }

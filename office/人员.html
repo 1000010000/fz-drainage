@@ -143,10 +143,9 @@
                 // https://lbs.amap.com/api/javascript-api/example/infowindow/default-style-infowindow
                 //构建信息窗体中显示的内容
                 var info = [];
-         
-                info.push("<p>姓名 : " + params.XM + " </p>");
-                info.push("<p>电话 : " + params.SJHM + " </p>");
-                info.push("<p>岗位 : " + params.GWMC + "</p></div></div>");
+                info.push("<p><b>姓名 :</b> " + params.XM + " </p>");
+                info.push("<p><b>电话 :</b> " + params.SJHM + " </p>");
+                info.push("<p><b>岗位 :</b> " + params.GWMC + "</p>");
 
                 infoWindow = new AMap.InfoWindow({
                     anchor: "bottom-center",
