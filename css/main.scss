@@ -24,6 +24,7 @@ input,
 textarea {
     outline: none;
     border: none;
+    vertical-align:middle;
 }
 
 input {
@@ -31,7 +32,34 @@ input {
         color: #d1d1d1;
     }
 }
-
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+:focus {
+    outline: 1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 #container {
     height: 100vh;
 }
@@ -222,12 +250,22 @@ input {
         color: #333;
         display: none;
 
-        input[type=checkbox] {
+      input[type=checkbox] {
+          zoom: 200%;
+          vertical-align: middle;
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+          -webkit-appearance: none;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-image: url(../images/icons/checkbox-no.png);
 
-            zoom: 200%;
-            vertical-align: middle;
-            margin-right: 4px;
-        }
+          &:checked {
+              background-image: url(../images/icons/checkbox.png);
+          }
+      }
 
         .list-box {
             display: flex;

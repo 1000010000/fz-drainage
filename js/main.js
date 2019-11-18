@@ -104,6 +104,7 @@ var Drainage = {
             dmodule.find('.J_maskBox').click(function () {
                 $(this).hide()
                 dmodule.find('.J_msgPopup').hide()
+                dmodule.find('.J_statePopup').hide()
             })
         },
         //运动轨迹详情
