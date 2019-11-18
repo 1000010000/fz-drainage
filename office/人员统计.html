@@ -16,6 +16,22 @@
                 <img class="icon-img" src="../images/icons/screen.png" alt="">
             </li>
         </ul>
+        <div class="msg-popup J_statePopup">
+
+            <p>状态查询</p>
+            <ul class="list-box m">
+                <li class="item">
+                    <label><input type="checkbox">全部</label>
+                </li>
+                <li class="item">
+                    <label><input type="checkbox">在线</label>
+                </li>
+                <li class="item">
+                    <label><input type="checkbox">离线</label>
+                </li>
+
+            </ul>
+        </div>
         <!-- 筛选弹窗 -->
         <div class="mask-box J_maskBox"></div>
         <div class="msg-popup J_msgPopup">
@@ -56,7 +72,8 @@
             </ul>
         </div>
         <div class="search-box">
-            
+            <input class="input" type="text" placeholder="请输入车牌或名称搜索">
+            <div class="select-btn J_stateBtn">全部</div>
         </div>
         <p class="table-title">在线人数：0/610</p>
         <table class="table-box">

@@ -15,11 +15,11 @@ var Drainage = {
              
                     markers = [{
                         position: [121.722616, 31.405467],
-                        content: "<div class='info'><div class='title_div'><span>长兴岛郊野公园</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                        content: "<div class='base map-mark'><div class='title'><p class='t'>鼓楼区建设局龙吸水字母3000</p><p>车牌：闽A711KA</p><p>所属单位：福州市城区水系联排联调中心</p><p>定位时间：2019-10-31 14:59</p></div><div class='arrow'></div><img src='../images/icons/small.png' alt='车辆' class='J_markers'></div>"
                     },
                     {
                         position: [121.521108, 31.46795],
-                        content: "<div class='info'><div class='title_div'><span>光明头</span><span>当前水位： 0.0m</span><span>2019-10-21 16:40</span></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
+                        content: "<div class='info'><div class='title_div'><p>光明头</p><p>当前水位： 0.0m</p><p>2019-10-21 16:40</p></div><div class='arrow'></div><img src='../images/icons/small.png' alt='小雨'></div>"
                     },
                     {
                         position: [121.533468, 31.389439],
@@ -52,7 +52,7 @@ var Drainage = {
                     ];
 
                     markers.map(function (marker) {
-                        new AMap.Marker({
+                        var marker =   new AMap.Marker({
                             map: map,
                             icon: marker.icon,
                             position: [marker.position[0], marker.position[1]],
@@ -60,9 +60,13 @@ var Drainage = {
                             content: marker.content, //设置文本标注内容
                             direction: 'right' //设置文本标注方位
                         });
+                        marker.on('click', function () {
+                            // alert(33)
+                        })
                     });
                 }
             logMapinfo()
+           
         },
 
         //办公-人员
@@ -91,6 +95,10 @@ var Drainage = {
             dmodule.find('.J_screen').click(function () {
 
                 dmodule.find('.J_msgPopup').show()
+                dmodule.find('.J_maskBox').show()
+            })  
+            dmodule.find('.J_stateBtn').click(function () {
+                dmodule.find('.J_statePopup').show()
                 dmodule.find('.J_maskBox').show()
             })
             dmodule.find('.J_maskBox').click(function () {
@@ -500,6 +508,25 @@ var Drainage = {
             })
 
         },
+        // 巡查记录
+        patrolRecord: function (id) {
+            var dmodule = $('#' + id);
+            dmodule.find('.J_report').click(function () {
+                dmodule.find('.J_msgPopup').show()
+                dmodule.find('.J_maskBox').show()
+            })
+            dmodule.find('.J_maskBox').click(function () {
+                $(this).hide()
+                dmodule.find('.J_msgPopup').hide()
+            })
+            dmodule.find('.J_listSel').on('click', 'p', function () {
+                $(this).addClass("active").siblings().removeClass("active");
+
+            })
+
+        }
+
+    
 
     }
 }
@@ -526,4 +553,5 @@ $(function () {
     doWhileExist('gwsqIndex', Drainage.Page.gwsqIndex);
     doWhileExist('gwsqJcxx', Drainage.Page.gwsqJcxx);
     doWhileExist('officeVehicle', Drainage.Page.officeVehicle);
+    doWhileExist('patrolRecord', Drainage.Page.patrolRecord);
 })

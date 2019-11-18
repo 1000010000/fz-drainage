@@ -37,13 +37,37 @@ input {
 }
 
 .base {
-    &.map-mark{
-        .title{
-            padding: 26px;
+    &.map-mark {
+        .title {
+            padding: 16px;
             background: #fff;
             border-radius: 8px;
+            margin-left: -20px;
+
+            p {
+                white-space: nowrap;
+                font-size: 26px;
+                color: #B0B0B0;
+
+                &.t {
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #333;
+                }
+            }
+
+        }
+
+        .arrow {
+            width: 0;
+            height: 0;
+            border-width: 10px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            margin-left: 10px;
         }
     }
+
     &.nav-bar {
         height: 100px;
         position: fixed;
@@ -327,8 +351,9 @@ input {
             font-size: 30px;
             box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
             border-radius: 8px;
-            padding: 0 35px;
+            padding: 0 70px 0 35px;
             margin-left: 15px;
+            background: #fff url(../images/icons/down-arrow.png) no-repeat 110px center /30px 30px;
         }
     }
 
@@ -1819,17 +1844,21 @@ input {
                     margin-right: 100px;
                     display: flex;
                     align-items: center;
+
                     .color {
                         width: 30px;
-                        height: 30px;    
+                        height: 30px;
                         border-radius: 6px;
                         margin-right: 12px;
+
                         &.red {
                             background: #C53E34;
                         }
+
                         &.orange {
                             background: #E98131;
                         }
+
                         &.yellow {
                             background: #E9DE36;
                         }
@@ -2886,6 +2915,176 @@ input {
 
         &.screen {
             background-image: url(../images/icons/screen.png);
+        }
+    }
+}
+
+// 车辆列表
+.vehicle-list {
+    .infor-content {
+        margin-top: 100px;
+
+        .vehicle-infor {
+            border-bottom: 1px solid #E5E5E5;
+
+            .pad {
+                padding: 20px 30px 0;
+
+                .infor-con {
+                    height: 32px;
+                    font-size: 32px;
+                    font-weight: 400;
+                    color: rgba(51, 51, 51, 1);
+                    margin-bottom: 20px;
+
+                }
+            }
+        }
+    }
+
+}
+
+// 巡查记录
+.patrol-record {
+    .pad {
+        padding: 30px;
+
+        .abnormal-title {
+            height: 33px;
+            font-size: 34px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .abnormal-list {
+            .item {
+                margin-bottom: 20px;
+                width: 690px;
+                height: 70px;
+                border: 1px solid rgba(213, 213, 213, 1);
+                border-radius: 8px;
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 70px;
+                color: rgba(51, 51, 51, 1);
+                text-align: center;
+
+                &.active {
+                    background: rgba(112, 168, 249, 1);
+                    color: #fff;
+                }
+            }
+        }
+
+        textarea {
+            width: 690px;
+            height: 180px;
+            border: 1px solid rgba(213, 213, 213, 1);
+            border-radius: 8px;
+            font-size: 30px;
+            font-weight: 400;
+            color: rgba(209, 209, 209, 1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .file {
+            width: 156px;
+            height: 156px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 8px;
+            position: relative;
+
+            .img-file {
+                width: 128px;
+                height: 128px;
+                margin: 20px 0 0 20px;
+            }
+
+            input {
+                width: 156px;
+                height: 156px;
+                opacity: 0;
+                filter: alpha(opacity=0);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        .time {
+            margin-top: 50px;
+            height: 34px;
+            font-size: 36px;
+            font-weight: bold;
+            color: rgba(51, 51, 51, 1);
+            text-align: center;
+        }
+
+        p {
+            margin-top: 40px;
+            text-align: center;
+
+            .btn {
+                width: 172px;
+                height: 72px;
+                line-height: 72px;
+                background: rgba(112, 168, 249, 1);
+                border-radius: 8px;
+                font-size: 34px;
+                text-align: center;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+
+    }
+
+    .mask-box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: #000;
+        opacity: .5;
+        z-index: 22222;
+        display: none;
+    }
+
+    .msg-popup {
+        position: fixed;
+        z-index: 111111;
+        width: 260px;
+        height: 260px;
+        border-radius: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        background: #fff;
+        padding: 40px 30px 0;
+        font-size: 28px;
+        color: #333;
+        display: none;
+        text-align: center;
+
+        .img {
+            width: 64px;
+            height: 64px;
+            margin-top: 20px;
+
+        }
+
+        .up {
+            text-align: center;
+            height: 34px;
+            font-size: 36px;
+            margin-top: 28px;
+            font-weight: bold;
+            color: rgba(112, 168, 249, 1);
         }
     }
 }
