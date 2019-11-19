@@ -1727,7 +1727,7 @@ table {
 
 .choice-pop-up .list-box {
   overflow: hidden;
-  padding: 10px 30px 0;
+  padding: 10px 20px 0 30px;
 }
 
 .choice-pop-up .list-box .list {
@@ -1739,7 +1739,7 @@ table {
 }
 
 .choice-pop-up .list-box .list .left {
-  flex: 0 0 140px;
+  flex: 0 0 150px;
 }
 
 .choice-pop-up .list-box .list .right .input {
@@ -1775,7 +1775,19 @@ table {
   width: 170px;
 }
 
+.choice-pop-up .list-box .list.state .item:nth-child(3n) {
+  margin-right: 0;
+}
+
 .choice-pop-up .list-box .list.state .item:last-child {
+  margin-right: 0;
+}
+
+.choice-pop-up .list-box .list.river .item {
+  width: 240px;
+}
+
+.choice-pop-up .list-box .list.river .item:nth-child(2n) {
   margin-right: 0;
 }
 
