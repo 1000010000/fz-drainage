@@ -450,7 +450,7 @@ table {
             font-size: 26px;
             width: 25%;
             height: 72px;
-            border: 1px solid #f3f5ff;
+            border: 2px solid #f3f5ff;
         }
 
         th {
@@ -476,7 +476,7 @@ table {
         .item {
             height: 90px;
             line-height: 90px;
-            border-bottom: 1px solid #e7e7e7;
+            border-bottom: 2px solid #e7e7e7;
 
             .link-item {
                 font-size: 32px;
@@ -591,7 +591,7 @@ table {
                     text-align: center;
                     line-height: 84px;
                     background-color: #f5f5f5;
-                    border-bottom: 1px solid #e1e1e1;
+                    border-bottom: 2px solid #e1e1e1;
                 }
 
                 .table-list-scroll {
@@ -615,7 +615,7 @@ table {
                             text-align: center;
                             line-height: 84px;
                             background-color: #f5f5f5;
-                            border-bottom: 1px solid #e1e1e1;
+                            border-bottom: 2px solid #e1e1e1;
 
                             .name-sw {
                                 width: 50%;
@@ -842,7 +842,7 @@ table {
                         text-align: center;
                         line-height: 84px;
                         background-color: #f5f5f5;
-                        border-bottom: 1px solid #e1e1e1;
+                        border-bottom: 2px solid #e1e1e1;
 
                         td {}
 
@@ -1023,7 +1023,7 @@ table {
             .invest-btn {
                 margin-top: 20px;
                 display: flex;
-                border-top: 1px solid #BBBBBB;
+                border-top: 2px solid #BBBBBB;
 
                 .invest-cancel {
                     width: 50%;
@@ -1031,7 +1031,7 @@ table {
                     font-size: 30px;
                     padding: 25px 0;
                     background-color: #fff;
-                    border-right: 1px solid #bbb;
+                    border-right: 2px solid #bbb;
                 }
 
                 .invest-confirm {
@@ -1137,7 +1137,7 @@ table {
                     padding: 20px;
                     margin: 0 0 20px 20px;
                     background-color: #fff;
-                    border: 1px solid rgba(224, 224, 224, 1);
+                    border: 2px solid rgba(224, 224, 224, 1);
                     border-radius: 8px;
                     box-sizing: border-box;
 
@@ -1306,7 +1306,7 @@ table {
                 font-size: 28px;
                 font-weight: 400;
                 color: rgba(51, 51, 51, 1);
-                border-bottom: 1px solid #E5E5E5;
+                border-bottom: 2px solid #E5E5E5;
             }
 
             .pad {
@@ -1555,7 +1555,7 @@ table {
                 white-space: nowrap;
 
                 tr {
-                    border-bottom: 1px solid #F0F0F0;
+                    border-bottom: 2px solid #F0F0F0;
                 }
 
                 tr:nth-child(even) {
@@ -1565,16 +1565,16 @@ table {
                 th {
                     text-align: center;
                     padding: 0 20px;
-                    border-bottom: 1px solid #F0F0F0;
-                    border-right: 1px solid #F0F0F0;
+                    border-bottom: 2px solid #F0F0F0;
+                    border-right: 2px solid #F0F0F0;
                     font-weight: normal;
                 }
 
                 td {
                     margin: 0;
                     padding: 0;
-                    border-bottom: 1px solid #F0F0F0;
-                    border-right: 1px solid #F0F0F0;
+                    border-bottom: 2px solid #F0F0F0;
+                    border-right: 2px solid #F0F0F0;
                     padding: 0 20px;
                     text-align: center;
                     height: 82px;
@@ -1587,7 +1587,7 @@ table {
                     text-align: center;
                     line-height: 84px;
                     background-color: #F7F7F7;
-                    border-bottom: 1px solid #F0F0F0;
+                    border-bottom: 2px solid #F0F0F0;
                 }
 
                 .list {
@@ -1595,7 +1595,7 @@ table {
                     background-color: #f5f5f5;
                     font-size: 30px;
                     color: #333;
-                    border-bottom: 1px solid #000;
+                    border-bottom: 2px solid #000;
                     border-spacing: 0;
 
                 }
@@ -1701,7 +1701,7 @@ table {
                 font-size: 28px;
                 font-weight: 400;
                 color: rgba(51, 51, 51, 1);
-                border-bottom: 1px solid #E5E5E5;
+                border-bottom: 2px solid #E5E5E5;
             }
 
             .pad {
@@ -1835,13 +1835,13 @@ table {
 
     .box-btn {
         line-height: 80px;
-        border-top: 1px solid #BBBBBB;
+        border-top: 2px solid #BBBBBB;
         display: flex;
 
         .btn {
             flex: 1;
             text-align: center;
-            border-right: 1px solid #BBBBBB;
+            border-right: 2px solid #BBBBBB;
             color: #999999;
             font-size: 30px;
             cursor: pointer;
@@ -1890,7 +1890,7 @@ table {
                     margin: 0 20px 20px 0;
                     width: 122px;
                     line-height: 64px;
-                    border: 1px solid #E0E0E0;
+                    border: 2px solid #E0E0E0;
                     text-align: center;
                     font-size: 26px;
                     border-radius: 8px;
@@ -1964,7 +1964,7 @@ table {
 
     .btn-box {
         line-height: 75px;
-        border-top: 1px solid #E0E0E0;
+        border-top: 2px solid #E0E0E0;
         display: flex;
 
         .btn {
@@ -2087,7 +2087,7 @@ table {
         .infor-list {
             .item {
                 line-height: 96px;
-                border-bottom: 1px solid #E5E5E5;
+                border-bottom: 2px solid #E5E5E5;
                 padding-left: 30px;
                 color: #333333;
                 font-size: 28px;
@@ -2244,7 +2244,7 @@ table {
                             text-align: center;
                             line-height: 84px;
                             background-color: #f5f5f5;
-                            border-bottom: 1px solid #e1e1e1;
+                            border-bottom: 2px solid #e1e1e1;
 
                             td {
                                 font-size: 30px;
@@ -2348,7 +2348,7 @@ table {
                 .invest-btn {
                     margin-top: 20px;
                     display: flex;
-                    border-top: 1px solid #BBBBBB;
+                    border-top: 2px solid #BBBBBB;
 
                     .invest-cancel {
                         width: 50%;
@@ -2356,7 +2356,7 @@ table {
                         font-size: 30px;
                         padding: 25px 0;
                         background-color: #fff;
-                        border-right: 1px solid #bbb;
+                        border-right: 2px solid #bbb;
                     }
 
                     .invest-confirm {
@@ -2461,7 +2461,7 @@ table {
                         padding: 20px;
                         margin: 0 0 20px 20px;
                         background-color: #fff;
-                        border: 1px solid rgba(224, 224, 224, 1);
+                        border: 2px solid rgba(224, 224, 224, 1);
                         border-radius: 8px;
                         box-sizing: border-box;
 
@@ -2592,7 +2592,7 @@ table {
                             text-align: center;
                             line-height: 84px;
                             background-color: #f5f5f5;
-                            border-bottom: 1px solid #e1e1e1;
+                            border-bottom: 2px solid #e1e1e1;
 
                             td {
                                 font-size: 30px;
@@ -2696,7 +2696,7 @@ table {
                 .invest-btn {
                     margin-top: 20px;
                     display: flex;
-                    border-top: 1px solid #BBBBBB;
+                    border-top: 2px solid #BBBBBB;
 
                     .invest-cancel {
                         width: 50%;
@@ -2704,7 +2704,7 @@ table {
                         font-size: 30px;
                         padding: 25px 0;
                         background-color: #fff;
-                        border-right: 1px solid #bbb;
+                        border-right: 2px solid #bbb;
                     }
 
                     .invest-confirm {
@@ -2810,7 +2810,7 @@ table {
                         padding: 20px;
                         margin: 0 0 20px 20px;
                         background-color: #fff;
-                        border: 1px solid rgba(224, 224, 224, 1);
+                        border: 2px solid rgba(224, 224, 224, 1);
                         border-radius: 8px;
                         box-sizing: border-box;
 
@@ -3017,7 +3017,7 @@ table {
         margin-top: 100px;
 
         .vehicle-infor {
-            border-bottom: 1px solid #E5E5E5;
+            border-bottom: 2px solid #E5E5E5;
 
             .pad {
                 padding: 20px 30px 0;
@@ -3054,7 +3054,7 @@ table {
                 margin-bottom: 20px;
                 width: 690px;
                 height: 70px;
-                border: 1px solid rgba(213, 213, 213, 1);
+                border: 2px solid rgba(213, 213, 213, 1);
                 border-radius: 8px;
                 font-size: 30px;
                 font-weight: 400;
@@ -3072,7 +3072,7 @@ table {
         textarea {
             width: 690px;
             height: 180px;
-            border: 1px solid rgba(213, 213, 213, 1);
+            border: 2px solid rgba(213, 213, 213, 1);
             border-radius: 8px;
             font-size: 30px;
             font-weight: 400;

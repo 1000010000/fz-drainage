@@ -433,7 +433,7 @@ table {
   font-size: 26px;
   width: 25%;
   height: 72px;
-  border: 1px solid #f3f5ff;
+  border: 2px solid #f3f5ff;
 }
 
 .screen-rytj .table-box th {
@@ -452,7 +452,7 @@ table {
 .office-trajectory .list-box .item {
   height: 90px;
   line-height: 90px;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 2px solid #e7e7e7;
 }
 
 .office-trajectory .list-box .item .link-item {
@@ -551,7 +551,7 @@ table {
   text-align: center;
   line-height: 84px;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
 }
 
 .real-time .products .main-cont form .table-list-scroll {
@@ -577,7 +577,7 @@ table {
   text-align: center;
   line-height: 84px;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
 }
 
 .real-time .products .main-cont form .table-list-scroll .table-list .form-title .name-sw {
@@ -785,7 +785,7 @@ table {
   text-align: center;
   line-height: 84px;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
 }
 
 .gate-pump .products .main-cont .table-list-scroll .table-list:first-child form .table-list-scroll {
@@ -948,7 +948,7 @@ table {
 .gate-pump .foot-filter .follow-btn .invest-btn {
   margin-top: 20px;
   display: flex;
-  border-top: 1px solid #BBBBBB;
+  border-top: 2px solid #BBBBBB;
 }
 
 .gate-pump .foot-filter .follow-btn .invest-btn .invest-cancel {
@@ -957,7 +957,7 @@ table {
   font-size: 30px;
   padding: 25px 0;
   background-color: #fff;
-  border-right: 1px solid #bbb;
+  border-right: 2px solid #bbb;
 }
 
 .gate-pump .foot-filter .follow-btn .invest-btn .invest-confirm {
@@ -1063,7 +1063,7 @@ table {
   padding: 20px;
   margin: 0 0 20px 20px;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -1209,7 +1209,7 @@ table {
   font-size: 28px;
   font-weight: 400;
   color: #333333;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 2px solid #E5E5E5;
 }
 
 .basic-details .products .main-cont .pad {
@@ -1437,7 +1437,7 @@ table {
 }
 
 .page-gwsq .tab-main .table-list-scroll .main tr {
-  border-bottom: 1px solid #F0F0F0;
+  border-bottom: 2px solid #F0F0F0;
 }
 
 .page-gwsq .tab-main .table-list-scroll .main tr:nth-child(even) {
@@ -1447,16 +1447,16 @@ table {
 .page-gwsq .tab-main .table-list-scroll .main th {
   text-align: center;
   padding: 0 20px;
-  border-bottom: 1px solid #F0F0F0;
-  border-right: 1px solid #F0F0F0;
+  border-bottom: 2px solid #F0F0F0;
+  border-right: 2px solid #F0F0F0;
   font-weight: normal;
 }
 
 .page-gwsq .tab-main .table-list-scroll .main td {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #F0F0F0;
-  border-right: 1px solid #F0F0F0;
+  border-bottom: 2px solid #F0F0F0;
+  border-right: 2px solid #F0F0F0;
   padding: 0 20px;
   text-align: center;
   height: 82px;
@@ -1469,7 +1469,7 @@ table {
   text-align: center;
   line-height: 84px;
   background-color: #F7F7F7;
-  border-bottom: 1px solid #F0F0F0;
+  border-bottom: 2px solid #F0F0F0;
 }
 
 .page-gwsq .tab-main .table-list-scroll .main .list {
@@ -1477,7 +1477,7 @@ table {
   background-color: #f5f5f5;
   font-size: 30px;
   color: #333;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
   border-spacing: 0;
 }
 
@@ -1575,7 +1575,7 @@ table {
   font-size: 28px;
   font-weight: 400;
   color: #333333;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 2px solid #E5E5E5;
 }
 
 .basic-pupm .products .main-cont .pad {
@@ -1702,14 +1702,14 @@ table {
 
 .time-pop-up .box-btn {
   line-height: 80px;
-  border-top: 1px solid #BBBBBB;
+  border-top: 2px solid #BBBBBB;
   display: flex;
 }
 
 .time-pop-up .box-btn .btn {
   flex: 1;
   text-align: center;
-  border-right: 1px solid #BBBBBB;
+  border-right: 2px solid #BBBBBB;
   color: #999999;
   font-size: 30px;
   cursor: pointer;
@@ -1757,7 +1757,7 @@ table {
   margin: 0 20px 20px 0;
   width: 122px;
   line-height: 64px;
-  border: 1px solid #E0E0E0;
+  border: 2px solid #E0E0E0;
   text-align: center;
   font-size: 26px;
   border-radius: 8px;
@@ -1822,7 +1822,7 @@ table {
 
 .choice-pop-up .btn-box {
   line-height: 75px;
-  border-top: 1px solid #E0E0E0;
+  border-top: 2px solid #E0E0E0;
   display: flex;
 }
 
@@ -1939,7 +1939,7 @@ table {
 
 .gwsq-jcxx .tab-main .infor-list .item {
   line-height: 96px;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 2px solid #E5E5E5;
   padding-left: 30px;
   color: #333333;
   font-size: 28px;
@@ -2085,7 +2085,7 @@ table {
   text-align: center;
   line-height: 84px;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
 }
 
 .office-weather .water-regime .products .main-cont .table-list-scroll .table-list:first-child td {
@@ -2183,7 +2183,7 @@ table {
 .office-weather .water-regime .products .msg-popup .invest-btn {
   margin-top: 20px;
   display: flex;
-  border-top: 1px solid #BBBBBB;
+  border-top: 2px solid #BBBBBB;
 }
 
 .office-weather .water-regime .products .msg-popup .invest-btn .invest-cancel {
@@ -2192,7 +2192,7 @@ table {
   font-size: 30px;
   padding: 25px 0;
   background-color: #fff;
-  border-right: 1px solid #bbb;
+  border-right: 2px solid #bbb;
 }
 
 .office-weather .water-regime .products .msg-popup .invest-btn .invest-confirm {
@@ -2297,7 +2297,7 @@ table {
   padding: 20px;
   margin: 0 0 20px 20px;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -2422,7 +2422,7 @@ table {
   text-align: center;
   line-height: 84px;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
 }
 
 .office-weather .real-time .products .main-cont .table-list-scroll .table-list:first-child td {
@@ -2520,7 +2520,7 @@ table {
 .office-weather .real-time .products .msg-popup .invest-btn {
   margin-top: 20px;
   display: flex;
-  border-top: 1px solid #BBBBBB;
+  border-top: 2px solid #BBBBBB;
 }
 
 .office-weather .real-time .products .msg-popup .invest-btn .invest-cancel {
@@ -2529,7 +2529,7 @@ table {
   font-size: 30px;
   padding: 25px 0;
   background-color: #fff;
-  border-right: 1px solid #bbb;
+  border-right: 2px solid #bbb;
 }
 
 .office-weather .real-time .products .msg-popup .invest-btn .invest-confirm {
@@ -2635,7 +2635,7 @@ table {
   padding: 20px;
   margin: 0 0 20px 20px;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -2816,7 +2816,7 @@ table {
 }
 
 .vehicle-list .infor-content .vehicle-infor {
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 2px solid #E5E5E5;
 }
 
 .vehicle-list .infor-content .vehicle-infor .pad {
@@ -2847,7 +2847,7 @@ table {
   margin-bottom: 20px;
   width: 690px;
   height: 70px;
-  border: 1px solid #d5d5d5;
+  border: 2px solid #d5d5d5;
   border-radius: 8px;
   font-size: 30px;
   font-weight: 400;
@@ -2864,7 +2864,7 @@ table {
 .patrol-record .pad textarea {
   width: 690px;
   height: 180px;
-  border: 1px solid #d5d5d5;
+  border: 2px solid #d5d5d5;
   border-radius: 8px;
   font-size: 30px;
   font-weight: 400;
