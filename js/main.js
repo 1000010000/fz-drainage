@@ -1,5 +1,9 @@
 var Drainage = {
     Page: {
+        //监测
+        monitorIndex(){
+
+        },
         //车辆
         officeVehicle: function (id) {
             var dmodule = $('#' + id);
@@ -38,7 +42,7 @@ var Drainage = {
                     anchor: "bottom-center",
                     closeWhenClickMap: true,
                     retainWhenClose: true,
-                    offset: new AMap.Pixel(-13, -30),
+                    offset: new AMap.Pixel(-13, -45),
                     content: info.join("") //使用默认信息窗体框样式，显示信息内容
                 });
                 infoWindow.open(map, marker.getPosition());

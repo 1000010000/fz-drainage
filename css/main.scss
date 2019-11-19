@@ -87,7 +87,9 @@ table {
         font-weight: normal;
     }
 }
-
+.amap-info-close{
+    display: none;
+}
 .base {
     &.map-mark {
         .title {
@@ -2960,7 +2962,7 @@ table {
             padding-left: 25px;
 
             &.active {
-                background: #F8F9FE;
+                background: #ebedf7;
             }
         }
     }

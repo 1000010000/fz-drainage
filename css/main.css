@@ -87,6 +87,10 @@ table {
   font-weight: normal;
 }
 
+.amap-info-close {
+  display: none;
+}
+
 .base.map-mark .title {
   padding: 16px;
   background: #fff;
@@ -2763,7 +2767,7 @@ table {
 }
 
 .zhandian-pop-up .list .item.active {
-  background: #F8F9FE;
+  background: #ebedf7;
 }
 
 .slide-bar {
