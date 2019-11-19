@@ -19,7 +19,7 @@ var Drainage = {
                 imageSize: new AMap.Size(36, 36),
             });
 
-            function showInfo(marker, params) {
+            function showInfo(marker) {
                 var info = [];
                 info.push("<p><b>闽江学院</b></p>");
                 info.push("<p>当前雨量：0.0mm</p>");
@@ -61,6 +61,10 @@ var Drainage = {
                 AMap.event.addListener(marker, "click", function (e) {
                     showInfo(marker, item)
                 })
+            })
+
+            dmodule.find('.J_timelyList').on('click','li',function(){
+                $(this).addClass('timely_active').siblings().removeClass('timely_active');
             })
         },
         //车辆
@@ -492,7 +496,7 @@ var Drainage = {
 
             //站点
             dmodule.on('click', '.J_zhandianBtn', function () {
-                var _html = $('.J_zhandianPopUp').html();
+                var _html = $('.J_zhandianPopUp').html();  
                 layer.open({
                     type: 1,
                     className: 'layer-box',
@@ -527,11 +531,13 @@ var Drainage = {
 
 
             $('body').on('click', '.J_popClose .btn', function () {
-                layer.closeAll()
-                //确认
+                 //确认
                 if ($(this).hasClass('active')) {
+                    console.log($('.J_startTime').val());
                     alert('提交') //确认执行事件
                 }
+                layer.closeAll()
+              
             })
 
             $('body').on('click', '.J_listBox .list .item', function () {
@@ -569,11 +575,14 @@ var Drainage = {
             })
 
             $('body').on('click', '.J_popClose .btn', function () {
-                layer.closeAll()
+              
                 //确认
                 if ($(this).hasClass('active')) {
-                    alert('提交') //确认执行事件
+                    console.log($('.J_startTime').val());
+                    
+                    // alert('提交') //确认执行事件
                 }
+                layer.closeAll()
             })
 
             $('body').on('click', '.J_listBox .list .item', function () {
