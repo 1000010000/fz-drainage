@@ -4,6 +4,21 @@ var Drainage = {
         monitorIndex(id) {
             var dmodule = $('#' + id);
             var infoWindow;
+            var markerList = [
+                {
+                    leva: 1,
+                    x: 121.511958,
+                    y: 31.239103
+                }, {
+                    leva: 2,
+                    x: 121.428371,
+                    y: 31.193829
+                }, {
+                    leva: 3,
+                    x: 121.722616,
+                    y: 31.405467
+                },
+            ]
             var map = new AMap.Map('container', {
                 resizeEnable: true,
                 center: [121.441071, 31.216294],
@@ -11,60 +26,62 @@ var Drainage = {
                 showLabel: false,
                 expandZoomRange: true,
             });
-
-            // 创建一个 icon
-            var markerIcon = new AMap.Icon({
-                size: new AMap.Size(36, 36),
-                image: './images/icons/zhongyu.png',
-                imageSize: new AMap.Size(36, 36),
-            });
-
-            function showInfo(marker) {
-                var info = [];
-                info.push("<p><b>闽江学院</b></p>");
-                info.push("<p>当前雨量：0.0mm</p>");
-                info.push("<p>2019-10-21 16:40</p>");
-
-                infoWindow = new AMap.InfoWindow({
-                    anchor: "bottom-center",
-                    closeWhenClickMap: true,
-                    retainWhenClose: true,
-                    offset: new AMap.Pixel(-13, -45),
-                    content: info.join("") //使用默认信息窗体框样式，显示信息内容
-                });
-                infoWindow.open(map, marker.getPosition());
+            var markerIcon = {
+                // shyq: [{ 1: 'wuyu.png' }, { 2: 'small.png' }, { 3: 'zhongyu.png' }, { 4: 'dayu.png' }, { 5: 'toBig.png' }, { 6: 'baoyu.png' }, { 7: 'big.png' }, { 8: 'toBig.png' }],
+                0: ['wuyu.png', 'small.png', 'zhongyu.png', 'dayu.png', 'toBig.png', 'baoyu.png', 'big.png', 'toBig.png'],
+                1: ['n_zheng.png', 'n_di.png', 'n_chao.png', 'n_yi.png', 'w_zheng.png', 'w_di.png', 'w_chao.png', 'w_yi.png', 'k_zheng.png', 'k_chaoxun.png', 'k_chao.png', 'k_chaoxiaohe.png'],
+                2: ['n_zheng.png', 'n_di.png', 'n_chao.png', 'n_yi.png', 'w_zheng.png', 'w_di.png', 'w_chao.png', 'w_yi.png'],
+                3: ['k_zheng.png', 'k_chaoxun.png', 'k_chao.png', 'k_chaoxiaohe.png'],
+                4: ['z_open.png', 'z_close.png', 'l_open.png', 'l_close.png'],
+                5: ['l_close.png', 'l_close.png', 'lu_little1.png', 'lu_big.png','lu_more.png'],
+                6: ['g_zheng.png', 'g_chao.png', 'g_y.png'],
+                7: ['jiankong.png'],
             }
-            var markerList = [
-                {
-                    x: 121.511958,
-                    y: 31.239103
-                }, {
-                    x: 121.428371,
-                    y: 31.193829
-                }, {
-                    x: 121.722616,
-                    y: 31.405467
-                },
-            ]
-            markerList.map(function (item) {
-                var marker = new AMap.Marker({
-                    map: map,
-                    icon: markerIcon,
-                    clickable: true,
-                    position: [item.x, item.y],
-                    // 以 icon 的 [center bottom] 为原点
-                    offset: new AMap.Pixel(-13, -30),
-                    direction: 'center', //设置文本标注方位
-                    anchor: "center"
-                });
-                // 添加标记事件
-                AMap.event.addListener(marker, "click", function (e) {
-                    showInfo(marker, item)
+            var markers = []
+            function infoWindow(data, id) {
+               
+                function showInfo(marker) {
+                    var infoHtml = "<p><b>闽江学院</b></p><p>当前雨量：0.0mm</p><p>2019-10-21 16:40</p>";
+                    infoWindow = new AMap.InfoWindow({
+                        anchor: "bottom-center",
+                        closeWhenClickMap: true,
+                        retainWhenClose: true,
+                        offset: new AMap.Pixel(-13, -45),
+                        content: infoHtml //使用默认信息窗体框样式，显示信息内容
+                    });
+                    infoWindow.open(map, marker.getPosition());
+                }
+               
+                markerList.map(function (item) {                    
+                    _markerIcon = new AMap.Icon({
+                        size: new AMap.Size(36, 36),
+                        image: './images/icons/' + markerIcon[id][item.leva - 1],
+                        imageSize: new AMap.Size(36, 36),
+                    });
+                  var marker = new AMap.Marker({
+                        map: map,
+                        icon: _markerIcon,
+                        clickable: true,
+                        position: [item.x, item.y],
+                        // 以 icon 的 [center bottom] 为原点
+                        offset: new AMap.Pixel(-13, -30),
+                        direction: 'center', //设置文本标注方位
+                        anchor: "center"
+                    });
+                    markers.push(marker)
+                    //添加标记事件
+                    AMap.event.addListener(marker, "click", function (e) {
+                        showInfo(marker, item)
+                    })
                 })
-            })
+            }
+            infoWindow(1, 0)
 
-            dmodule.find('.J_timelyList').on('click','li',function(){
+            dmodule.find('.J_timelyList').on('click', 'li', function () {
                 $(this).addClass('timely_active').siblings().removeClass('timely_active');
+                map.remove(markers)
+                infoWindow(1, $(this).attr('data-id'))
+               
             })
         },
         //车辆
@@ -226,6 +243,19 @@ var Drainage = {
         // 一日一查-开始巡河
         checkInfor: function (id) {
             var dmodule = $('#' + id);
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split("=");
+                    if (pair[0] == variable) { return pair[1]; }
+                }
+                return (false);
+            }
+            if (getQueryVariable('search')) {
+                $('.J_inputValue').val(decodeURIComponent(getQueryVariable('search')))
+            }
+
             dmodule.find('.J_timeOpen').click(function () {
                 if ($('.J_inputValue').val() == '') {
                     layer.open({
@@ -233,6 +263,13 @@ var Drainage = {
                         skin: 'msg',
                         time: 2 //2秒后自动关闭
                     });
+                } else {
+                    if (!$(this).hasClass('start')) { //开始
+                        $(this).addClass('start').text('暂停巡河')
+                    } else {
+                        $(this).removeClass('start').text('开始巡河')
+                    }
+
                 }
             })
         },
@@ -241,11 +278,12 @@ var Drainage = {
             var dmodule = $('#' + id);
             dmodule.find('.J_listBox').on('click', 'li', function () {
                 var self = $(this)
+                self.addClass('active').siblings().removeClass('active')
                 layer.open({
                     content: `您确认要选择${$(this).find('a').text()}`,
                     btn: ['确认', '取消'],
                     yes: function (index) {
-                        location.href = self.attr('data-url')
+                        location.href = '/check/check.html?search=' + encodeURIComponent(self.find('a').text())
                         layer.close(index);
                     }
                 });
@@ -496,7 +534,7 @@ var Drainage = {
 
             //站点
             dmodule.on('click', '.J_zhandianBtn', function () {
-                var _html = $('.J_zhandianPopUp').html();  
+                var _html = $('.J_zhandianPopUp').html();
                 layer.open({
                     type: 1,
                     className: 'layer-box',
@@ -531,13 +569,13 @@ var Drainage = {
 
 
             $('body').on('click', '.J_popClose .btn', function () {
-                 //确认
+                //确认
                 if ($(this).hasClass('active')) {
                     console.log($('.J_startTime').val());
                     alert('提交') //确认执行事件
                 }
                 layer.closeAll()
-              
+
             })
 
             $('body').on('click', '.J_listBox .list .item', function () {
@@ -575,11 +613,11 @@ var Drainage = {
             })
 
             $('body').on('click', '.J_popClose .btn', function () {
-              
+
                 //确认
                 if ($(this).hasClass('active')) {
                     console.log($('.J_startTime').val());
-                    
+
                     // alert('提交') //确认执行事件
                 }
                 layer.closeAll()

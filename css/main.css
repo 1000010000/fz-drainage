@@ -233,6 +233,36 @@ table {
   display: block;
 }
 
+.check_infor .bule {
+  color: #70A8F9;
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  font-size: 30px;
+}
+
+.check_infor .btn_a.start {
+  background: #E6AF82;
+}
+
+.check_infor input {
+  color: #D1D1D1;
+}
+
+.check_infor .report-link {
+  position: absolute;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 20px;
+  font-size: 34px;
+  color: #A30D0D;
+  right: 0;
+  bottom: 70px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 0 10px 8px rgba(163, 13, 13, 0.1);
+}
+
 .office-ry .screen-popup {
   background: #fff;
   border-radius: 8px;
@@ -453,6 +483,10 @@ table {
   height: 90px;
   line-height: 90px;
   border-bottom: 2px solid #e7e7e7;
+}
+
+.office-trajectory .list-box .item.active {
+  background: #F8F9FE;
 }
 
 .office-trajectory .list-box .item .link-item {
@@ -1510,6 +1544,7 @@ table {
   font-size: 34px;
   border-radius: 8px;
   text-align: center;
+  background: #fff;
 }
 
 .footer .main .item.active {

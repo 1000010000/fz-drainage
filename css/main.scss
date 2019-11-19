@@ -241,7 +241,36 @@ table {
         }
     }
 }
-
+.check_infor {
+    .bule {
+        color: #70A8F9;
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        font-size: 30px;
+    }
+    .btn_a{
+        &.start{
+            background: #E6AF82;
+        }
+    }
+    input{
+        color: #D1D1D1;
+    }
+    .report-link{
+        position: absolute;
+        height:72px;
+        line-height: 72px;
+        padding: 0 20px;
+        font-size: 34px;
+        color: #A30D0D;
+        right: 0;
+        bottom: 70px;
+        border-radius:8px;
+        background: #fff;
+        box-shadow:0px 0 10px 8px rgba(163,13,13,0.1);
+    }
+}
 //人员
 .office-ry {
     .screen-popup {
@@ -477,12 +506,15 @@ table {
             height: 90px;
             line-height: 90px;
             border-bottom: 2px solid #e7e7e7;
-
+            &.active{
+                background: #F8F9FE;
+            }
             .link-item {
                 font-size: 32px;
                 height: 100%;
                 display: block;
                 padding: 0 30px;
+               
             }
         }
     }
@@ -1632,6 +1664,7 @@ table {
             font-size: 34px;
             border-radius: 8px;
             text-align: center;
+            background: #fff;
 
             &.active {
                 background: #5BA9FF;
