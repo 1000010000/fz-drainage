@@ -78,10 +78,12 @@ table {
 }
 
 .amap-info-content {
+    min-width: 298px;
     padding: 16px;
     color: #B0B0B0;
     line-height: 40px;
     white-space: nowrap;
+    border-radius: 8px;
     b {
         color: #333;
         font-weight: normal;

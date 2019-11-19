@@ -1,8 +1,67 @@
 var Drainage = {
     Page: {
         //监测
-        monitorIndex(){
+        monitorIndex(id) {
+            var dmodule = $('#' + id);
+            var infoWindow;
+            var map = new AMap.Map('container', {
+                resizeEnable: true,
+                center: [121.441071, 31.216294],
+                zoom: 10,
+                showLabel: false,
+                expandZoomRange: true,
+            });
 
+            // 创建一个 icon
+            var markerIcon = new AMap.Icon({
+                size: new AMap.Size(36, 36),
+                image: './images/icons/zhongyu.png',
+                imageSize: new AMap.Size(36, 36),
+            });
+
+            function showInfo(marker, params) {
+                var info = [];
+                info.push("<p><b>闽江学院</b></p>");
+                info.push("<p>当前雨量：0.0mm</p>");
+                info.push("<p>2019-10-21 16:40</p>");
+
+                infoWindow = new AMap.InfoWindow({
+                    anchor: "bottom-center",
+                    closeWhenClickMap: true,
+                    retainWhenClose: true,
+                    offset: new AMap.Pixel(-13, -45),
+                    content: info.join("") //使用默认信息窗体框样式，显示信息内容
+                });
+                infoWindow.open(map, marker.getPosition());
+            }
+            var markerList = [
+                {
+                    x: 121.511958,
+                    y: 31.239103
+                }, {
+                    x: 121.428371,
+                    y: 31.193829
+                }, {
+                    x: 121.722616,
+                    y: 31.405467
+                },
+            ]
+            markerList.map(function (item) {
+                var marker = new AMap.Marker({
+                    map: map,
+                    icon: markerIcon,
+                    clickable: true,
+                    position: [item.x, item.y],
+                    // 以 icon 的 [center bottom] 为原点
+                    offset: new AMap.Pixel(-13, -30),
+                    direction: 'center', //设置文本标注方位
+                    anchor: "center"
+                });
+                // 添加标记事件
+                AMap.event.addListener(marker, "click", function (e) {
+                    showInfo(marker, item)
+                })
+            })
         },
         //车辆
         officeVehicle: function (id) {
@@ -568,4 +627,5 @@ $(function () {
     doWhileExist('gwsqJcxx', Drainage.Page.gwsqJcxx);
     doWhileExist('officeVehicle', Drainage.Page.officeVehicle);
     doWhileExist('patrolRecord', Drainage.Page.patrolRecord);
+    doWhileExist('monitorIndex', Drainage.Page.monitorIndex);
 })

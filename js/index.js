@@ -72,17 +72,17 @@ var time_list = [{
         center: [121.533468, 31.389439]
     }
 ]
-$('.timely_list li').click(function () {
-    logMapinfo();
-    $('.timely_list li').removeClass('timely_active');
-    $(this).addClass('timely_active');
-    $('.rain').removeClass('state_show');
-    $('.rain').eq($(this).data('id')).addClass('state_show')
-    let zoom = time_list[$(this).data('id')].zoom;
-    let center = time_list[$(this).data('id')].center;
-    map.setZoomAndCenter(zoom, center);
+// $('.timely_list li').click(function () {
+//     logMapinfo();
+//     $('.timely_list li').removeClass('timely_active');
+//     $(this).addClass('timely_active');
+//     $('.rain').removeClass('state_show');
+//     $('.rain').eq($(this).data('id')).addClass('state_show')
+//     let zoom = time_list[$(this).data('id')].zoom;
+//     let center = time_list[$(this).data('id')].center;
+//     map.setZoomAndCenter(zoom, center);
 
-})
+// })
 //   -------
 
 
@@ -186,7 +186,7 @@ var logMapinfo = function () {
         });
     }
 };
-logMapinfo();
+// logMapinfo();
 
 function mapZoom() {
     logMapinfo();
