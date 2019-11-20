@@ -7,21 +7,19 @@ var Drainage = {
             html.style.fontSize = whtml / 15 + "px";
             var dmodule = $('#' + id);
             var infoWindow;
-            var markerList = [
-                {
-                    leva: 1,
-                    x: 121.511958,
-                    y: 31.239103
-                }, {
-                    leva: 2,
-                    x: 121.428371,
-                    y: 31.193829
-                }, {
-                    leva: 3,
-                    x: 121.722616,
-                    y: 31.405467
-                },
-            ]
+            var markerList = [{
+                leva: 1,
+                x: 121.511958,
+                y: 31.239103
+            }, {
+                leva: 2,
+                x: 121.428371,
+                y: 31.193829
+            }, {
+                leva: 3,
+                x: 121.722616,
+                y: 31.405467
+            }, ]
             var map = new AMap.Map('container', {
                 resizeEnable: true,
                 center: [121.441071, 31.216294],
@@ -36,13 +34,14 @@ var Drainage = {
                 2: ['n_zheng.png', 'n_di.png', 'n_chao.png', 'n_yi.png', 'w_zheng.png', 'w_di.png', 'w_chao.png', 'w_yi.png'],
                 3: ['k_zheng.png', 'k_chaoxun.png', 'k_chao.png', 'k_chaoxiaohe.png'],
                 4: ['z_open.png', 'z_close.png', 'l_open.png', 'l_close.png'],
-                5: ['l_close.png', 'l_close.png', 'lu_little1.png', 'lu_big.png','lu_more.png'],
+                5: ['l_close.png', 'l_close.png', 'lu_little1.png', 'lu_big.png', 'lu_more.png'],
                 6: ['g_zheng.png', 'g_chao.png', 'g_y.png'],
                 7: ['jiankong.png'],
             }
             var markers = []
+
             function onInfoWindow(data, id) {
-               
+
                 function showInfo(marker) {
                     var infoHtml = "<p><b>闽江学院</b></p><p>当前雨量：0.0mm</p><p>2019-10-21 16:40</p>";
                     infoWindow = new AMap.InfoWindow({
@@ -54,14 +53,14 @@ var Drainage = {
                     });
                     infoWindow.open(map, marker.getPosition());
                 }
-               
-                markerList.map(function (item) {                    
+
+                markerList.map(function (item) {
                     _markerIcon = new AMap.Icon({
                         size: new AMap.Size(36, 36),
                         image: './images/icons/' + markerIcon[id][item.leva - 1],
                         imageSize: new AMap.Size(36, 36),
                     });
-                  var marker = new AMap.Marker({
+                    var marker = new AMap.Marker({
                         map: map,
                         icon: _markerIcon,
                         clickable: true,
@@ -86,7 +85,7 @@ var Drainage = {
                 map.remove(markers)
                 infoWindow.close()
                 onInfoWindow(1, $(this).attr('data-id'))
-               
+
             })
         },
         //车辆
@@ -132,18 +131,16 @@ var Drainage = {
                 });
                 infoWindow.open(map, marker.getPosition());
             }
-            var markerList = [
-                {
-                    x: 121.511958,
-                    y: 31.239103
-                }, {
-                    x: 121.428371,
-                    y: 31.193829
-                }, {
-                    x: 121.722616,
-                    y: 31.405467
-                },
-            ]
+            var markerList = [{
+                x: 121.511958,
+                y: 31.239103
+            }, {
+                x: 121.428371,
+                y: 31.193829
+            }, {
+                x: 121.722616,
+                y: 31.405467
+            }, ]
             markerList.map(function (item) {
                 var marker = new AMap.Marker({
                     map: map,
@@ -248,12 +245,15 @@ var Drainage = {
         // 一日一查-开始巡河
         checkInfor: function (id) {
             var dmodule = $('#' + id);
+
             function getQueryVariable(variable) {
                 var query = window.location.search.substring(1);
                 var vars = query.split("&");
                 for (var i = 0; i < vars.length; i++) {
                     var pair = vars[i].split("=");
-                    if (pair[0] == variable) { return pair[1]; }
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
                 }
                 return (false);
             }
@@ -563,7 +563,7 @@ var Drainage = {
 
                         },
                         dataType: "json",
-                        beforeSend: function () { },
+                        beforeSend: function () {},
                         success: function (data) {
                             var inforHtml = "";
                             for (var i = 0; i < data.productList.length; i++) {
@@ -596,7 +596,33 @@ var Drainage = {
                 //这里写触发事件
             })
 
-
+            //tab滚动
+            let htmlLeft = '';
+            let htmlRight = '';
+            for (let i = 1; i <= 25; i++) {
+                htmlLeft += '<tr>';
+                htmlLeft += '<td>磨洋河和光明港汇合前</td>';
+                htmlLeft += '</tr>';
+            }
+            for (let j = 1; j <= 25; j++) {
+                htmlRight += '<tr>';
+                htmlRight += '<td>A</td>';
+                htmlRight += '<td>100</td>';
+                htmlRight += '<td>500</td>';
+                htmlRight += '<td>1</td>';
+                htmlRight += '<td>500</td>';
+                htmlRight += '<td>1</td>'; 
+                htmlRight += '</tr>';
+            }
+            dmodule.find('.J_tableContainer .left .table2').html(htmlLeft);
+            dmodule.find('.J_tableContainer .right .table2').html(htmlRight);
+            //滚动
+            $('.J_tableContainer .right .list2').on('scroll', function () {
+                let top = $(this).scrollTop();
+                let left = $(this).scrollLeft();
+                dmodule.find('.J_tableContainer .left .list2').scrollTop(top);
+                dmodule.find('.J_tableContainer .right .list1').scrollLeft(left);
+            })
 
         },
 
