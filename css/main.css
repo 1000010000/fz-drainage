@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -1435,6 +1436,7 @@ table {
 .page-gwsq .tab-main {
   padding-top: 8px;
   overflow: hidden;
+  /*可以美化一下滚动条*/
 }
 
 .page-gwsq .tab-main.hide {
@@ -1517,6 +1519,110 @@ table {
 
 .page-gwsq .tab-main.selected {
   display: block;
+}
+
+.page-gwsq .tab-main table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.page-gwsq .tab-main table td {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.page-gwsq .tab-main .container {
+  width: 600px;
+  height: 500px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-gwsq .tab-main #left-div {
+  width: 80px;
+  float: left;
+}
+
+.page-gwsq .tab-main #left-div1 {
+  width: 100%;
+}
+
+.page-gwsq .tab-main #left-div2 {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.page-gwsq .tab-main #left-table2 {
+  margin-bottom: 4px;
+}
+
+.page-gwsq .tab-main #right-div {
+  float: left;
+  width: 240px;
+}
+
+.page-gwsq .tab-main #right-div1 {
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-gwsq .tab-main #right-div2 {
+  width: 100%;
+  height: 250px;
+  overflow: auto;
+}
+
+.page-gwsq .tab-main #right-table1 {
+  width: 320px;
+}
+
+.page-gwsq .tab-main #right-table2 {
+  width: 320px;
+  overflow: auto;
+}
+
+.page-gwsq .tab-main th, .page-gwsq .tab-main td {
+  height: 50px;
+  width: 80px;
+  line-height: 50px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.page-gwsq .tab-main th {
+  color: #1E304F;
+  background-color: #F3F8FF;
+}
+
+.page-gwsq .tab-main td {
+  color: #384967;
+}
+
+.page-gwsq .tab-main tr:nth-of-type(odd) {
+  background: #E7F2FF;
+}
+
+.page-gwsq .tab-main #right-div2::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px;
+  height: 4px;
+}
+
+.page-gwsq .tab-main #right-div2::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.page-gwsq .tab-main #right-div2::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .footer {
