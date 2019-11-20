@@ -3328,3 +3328,17 @@ table {
         }
     }
 }
+
+//视频列表
+.monitoring-list{
+    .item{
+        .link-block{
+            display: block;
+            color: #333333;
+            font-size: 34px;
+            padding: 0 30px;
+            line-height: 96px;
+            border-bottom: 2px solid #E5E5E5;
+        }
+    }
+}
