@@ -1548,6 +1548,9 @@ table {
             color: #D1D1D1;
             font-size: 32px;
             cursor: pointer;
+            &.active{
+                color: #5AA9FF;
+            }
         }
     }
 
@@ -2061,10 +2064,10 @@ table {
             }
         }
 
-        // .details-data {
-        //     height: 430px;
-        //     background: #5AA9FF;
-        // }
+        .details-data {
+            height: 430px;
+            // background: #5AA9FF;
+        }
 
         .data-time {
             margin: 38px 0 25px;

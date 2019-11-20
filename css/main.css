@@ -1432,6 +1432,10 @@ table {
   cursor: pointer;
 }
 
+.page-gwsq .menu .time-btn.active {
+  color: #5AA9FF;
+}
+
 .page-gwsq .tab-main {
   padding-top: 8px;
   overflow: hidden;
@@ -1916,6 +1920,10 @@ table {
   color: #333333;
   font-size: 30px;
   margin-bottom: 18px;
+}
+
+.gwsq-jcxx .tab-main .details-data {
+  height: 430px;
 }
 
 .gwsq-jcxx .tab-main .data-time {
