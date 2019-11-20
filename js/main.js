@@ -2,6 +2,9 @@ var Drainage = {
     Page: {
         //监测
         monitorIndex(id) {
+            var html = document.scrollingElement;
+            var whtml = html.getBoundingClientRect().width;
+            html.style.fontSize = whtml / 15 + "px";
             var dmodule = $('#' + id);
             var infoWindow;
             var markerList = [
@@ -38,7 +41,7 @@ var Drainage = {
                 7: ['jiankong.png'],
             }
             var markers = []
-            function infoWindow(data, id) {
+            function onInfoWindow(data, id) {
                
                 function showInfo(marker) {
                     var infoHtml = "<p><b>闽江学院</b></p><p>当前雨量：0.0mm</p><p>2019-10-21 16:40</p>";
@@ -75,12 +78,14 @@ var Drainage = {
                     })
                 })
             }
-            infoWindow(1, 0)
+            onInfoWindow(1, 0)
 
-            dmodule.find('.J_timelyList').on('click', 'li', function () {
+            dmodule.find('.J_timelyList').on('click', 'li', function () { //切换
                 $(this).addClass('timely_active').siblings().removeClass('timely_active');
+                $('.rain').eq($(this).data('id')).addClass('state_show').siblings().removeClass('state_show')
                 map.remove(markers)
-                infoWindow(1, $(this).attr('data-id'))
+                infoWindow.close()
+                onInfoWindow(1, $(this).attr('data-id'))
                
             })
         },
@@ -504,11 +509,14 @@ var Drainage = {
                 $('.J_gwsqIndex .menu .item').attr('class', 'item');
                 $(this).addClass('active');
                 $('.J_gwsqIndex .tab-main').hide().eq($(this).index()).show();
+                $('.J_renyiBtn').removeClass('active')
             })
 
             //任意
             dmodule.find('.J_gwsqIndex').on('click', '.J_renyiBtn', function () {
                 var _html = $('.J_timePopUp').html();
+                $(this).addClass('active');
+                $('.J_gwsqIndex .menu .item').removeClass('active')
                 layer.open({
                     type: 1,
                     className: 'layer-box',
