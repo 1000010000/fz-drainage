@@ -2,9 +2,7 @@ var Drainage = {
     Page: {
         //监测
         monitorIndex(id) {
-            var html = document.scrollingElement;
-            var whtml = html.getBoundingClientRect().width;
-            html.style.fontSize = whtml / 15 + "px";
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 15 + 'px';
             var dmodule = $('#' + id);
             var infoWindow;
             var markerList = [{
@@ -19,7 +17,7 @@ var Drainage = {
                 leva: 3,
                 x: 121.722616,
                 y: 31.405467
-            }, ]
+            },]
             var map = new AMap.Map('container', {
                 resizeEnable: true,
                 center: [121.441071, 31.216294],
@@ -76,6 +74,19 @@ var Drainage = {
                         showInfo(marker, item)
                     })
                 })
+
+
+                // 搜索
+                dmodule.find('.J_searchBox').on('input', function () {
+                    if ($(this).val()) {
+                        dmodule.find('.J_serchRecommend').show()
+                    }
+                })
+                dmodule.find('.J_serchRecommend').on('click', 'li', function () {
+                    dmodule.find('.J_searchBox').val($(this).text())
+                    dmodule.find('.J_serchRecommend').hide()
+                })
+
             }
             onInfoWindow(1, 0)
 
@@ -140,7 +151,7 @@ var Drainage = {
             }, {
                 x: 121.722616,
                 y: 31.405467
-            }, ]
+            },]
             markerList.map(function (item) {
                 var marker = new AMap.Marker({
                     map: map,
@@ -563,7 +574,7 @@ var Drainage = {
 
                         },
                         dataType: "json",
-                        beforeSend: function () {},
+                        beforeSend: function () { },
                         success: function (data) {
                             var inforHtml = "";
                             for (var i = 0; i < data.productList.length; i++) {
@@ -607,11 +618,11 @@ var Drainage = {
             for (let j = 1; j <= 25; j++) {
                 htmlRight += '<tr>';
                 htmlRight += '<td>A</td>';
-                htmlRight += '<td>100</td>';
+                htmlRight += '<td>2019-09-29 18:45:00</td>';
                 htmlRight += '<td>500</td>';
                 htmlRight += '<td>1</td>';
-                htmlRight += '<td>500</td>';
-                htmlRight += '<td>1</td>'; 
+                htmlRight += '<td>2019-09-29 18:45:00</td>';
+                htmlRight += '<td>1</td>';
                 htmlRight += '</tr>';
             }
             dmodule.find('.J_tableContainer .left .table2').html(htmlLeft);

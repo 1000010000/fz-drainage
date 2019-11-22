@@ -8,6 +8,7 @@ html,
 body {
     font-size: 22px;
     color: #333;
+    touch-action: none;
 }
 
 a {
@@ -524,7 +525,9 @@ table {
                 height: 100%;
                 display: block;
                 padding: 0 30px;
-
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
         }
     }
@@ -1390,10 +1393,6 @@ table {
                         line-height: 60px;
                         text-align: center;
 
-                        .main-img-icon {}
-
-                        .main-img-icon {}
-
                         .main-name {
                             font-size: 26px;
                             font-weight: 400;
@@ -1654,7 +1653,6 @@ table {
         }
 
         .container {
-            max-height: 800px;
             padding: 0;
             box-sizing: border-box;
             display: flex;
@@ -1671,14 +1669,15 @@ table {
                     word-wrap: break-word;
                 }
 
-            }             
-    
+            }
+
             .left {
                 width: 300px;
                 float: left;
 
                 .list {
                     width: 100%;
+
                     table {
                         tr:first-child {
                             th {
@@ -1690,16 +1689,16 @@ table {
 
                 .list2 {
                     width: 100%;
-                    height: 700px;
+                    height: calc(100vh - 460px);
                     overflow: hidden;
-                   
+
                     .table2 {
                         margin-bottom: 4px;
                     }
-    
-                } 
-            }                           
-               
+
+                }
+            }
+
             .right {
                 float: left;
                 width: 450px;
@@ -1708,17 +1707,17 @@ table {
                     width: 100%;
                     overflow: hidden;
                 }
-        
+
                 .list2 {
                     width: 100%;
-                    height: 700px;
+                    height: calc(100vh - 460px);
                     overflow: auto;
                 }
-        
+
                 .table1 {
                     width: 1200px;
                 }
-        
+
                 .table2 {
                     width: 1200px;
                     overflow: auto;
@@ -1729,7 +1728,7 @@ table {
                     width: 180px;
                 }
             }
-      
+
             th,
             td {
                 height: 82px;
@@ -1738,21 +1737,21 @@ table {
                 border-bottom: 2px solid #F0F0F0;
                 border-right: 2px solid #F0F0F0;
             }
-    
+
             th {
                 background-color: #F7F7F7;
             }
-    
+
             td {
                 color: #384967;
             }
-    
-            tr:nth-of-type(odd) {
-                background: #F7F7F7;
+
+            tr:nth-of-type(even) {
+                background: #F8F9FE;
             }
 
         }
-        
+
     }
 }
 
@@ -2050,6 +2049,7 @@ table {
                         background: #5AA9FF;
                         border-color: #5AA9FF;
                         color: #FFF;
+                        padding: 0 20px;
                     }
 
                 }
@@ -3330,9 +3330,9 @@ table {
 }
 
 //视频列表
-.monitoring-list{
-    .item{
-        .link-block{
+.monitoring-list {
+    .item {
+        .link-block {
             display: block;
             color: #333333;
             font-size: 34px;

@@ -8,6 +8,7 @@ html,
 body {
   font-size: 22px;
   color: #333;
+  touch-action: none;
 }
 
 a {
@@ -494,6 +495,9 @@ table {
   height: 100%;
   display: block;
   padding: 0 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .check-index .link-btn {
@@ -1524,7 +1528,6 @@ table {
 }
 
 .page-gwsq .tab-main .container {
-  max-height: 800px;
   padding: 0;
   box-sizing: border-box;
   display: flex;
@@ -1558,7 +1561,7 @@ table {
 
 .page-gwsq .tab-main .container .left .list2 {
   width: 100%;
-  height: 700px;
+  height: calc(100vh - 460px);
   overflow: hidden;
 }
 
@@ -1578,7 +1581,7 @@ table {
 
 .page-gwsq .tab-main .container .right .list2 {
   width: 100%;
-  height: 700px;
+  height: calc(100vh - 460px);
   overflow: auto;
 }
 
@@ -1613,8 +1616,8 @@ table {
   color: #384967;
 }
 
-.page-gwsq .tab-main .container tr:nth-of-type(odd) {
-  background: #F7F7F7;
+.page-gwsq .tab-main .container tr:nth-of-type(even) {
+  background: #F8F9FE;
 }
 
 .footer {
@@ -1903,6 +1906,7 @@ table {
   background: #5AA9FF;
   border-color: #5AA9FF;
   color: #FFF;
+  padding: 0 20px;
 }
 
 .choice-pop-up .list-box .list.state {
