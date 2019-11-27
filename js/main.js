@@ -169,6 +169,18 @@ var Drainage = {
                 })
             })
 
+
+            // 搜索
+            dmodule.find('.J_searchBox').on('input', function () {
+                if ($(this).val()) {
+                    dmodule.find('.J_serchRecommend').show()
+                }
+            })
+            dmodule.find('.J_serchRecommend').on('click', 'li', function () {
+                dmodule.find('.J_searchBox').val($(this).text())
+                dmodule.find('.J_serchRecommend').hide()
+            })
+
         },
 
         //办公-人员
@@ -219,6 +231,17 @@ var Drainage = {
                 showLabel: false,
                 expandZoomRange: true,
             });
+
+            // 搜索
+            dmodule.find('.J_searchBox').on('input', function () {
+                if ($(this).val()) {
+                    dmodule.find('.J_serchRecommend').show()
+                }
+            })
+            dmodule.find('.J_serchRecommend').on('click', 'li', function () {
+                dmodule.find('.J_searchBox').val($(this).text())
+                dmodule.find('.J_serchRecommend').hide()
+            })
         },
         //气象信息
         officeWeather: function (id) {
@@ -305,68 +328,6 @@ var Drainage = {
                 });
             })
         },
-
-        //实时水晴
-        realTime: function (id) {
-            var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click', 'li', function () {
-                console.log($(this).children('p'))
-                $(this).children('p').addClass("active");
-                $(this).siblings().children('p').removeClass("active");
-                $(this).addClass("active").siblings().removeClass("active");
-                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-            });
-            dmodule.find('.J_selectOnly').click(function () {
-
-                dmodule.find('.J_msgPopup').show()
-                dmodule.find('.J_maskBox').show()
-            })
-            dmodule.find('.J_maskBox').click(function () {
-                $(this).hide()
-                dmodule.find('.J_msgPopup').hide()
-            })
-            dmodule.find('.J_cancelSel').click(function () {
-                dmodule.find('.J_maskBox').hide()
-                dmodule.find('.J_msgPopup').hide()
-            })
-            dmodule.find('.J_confirmSel ').click(function () {
-                var inputVal = dmodule.find('.pump-input input').val()
-                if (inputVal != '') {
-                    dmodule.find('.J_maskBox').hide()
-                    dmodule.find('.J_msgPopup').hide()
-                }
-            })
-            dmodule.find('.J_listSel').on('click', 'li', function () {
-                $(this).addClass("active").siblings().removeClass("active");
-            })
-            dmodule.find('.J_timeSel').click(function () {
-                dmodule.find('.J_msgPopupTime').show()
-                dmodule.find('.J_maskBoxTime').show()
-            })
-            dmodule.find('.J_maskBoxTime').click(function () {
-                $(this).hide()
-                dmodule.find('.J_msgPopupTime').hide()
-            })
-            // laydate.render({
-            //     elem:  dmodule.find('#test5') ,
-            //     type: 'datetime'
-            // });
-            dmodule.find('.J_follow').on('click', 'span', function () {
-                $(this).addClass("active").siblings().removeClass("active");
-
-            })
-            dmodule.find('.J_site').click(function () {
-
-                dmodule.find('.J_msgPopupSite').show()
-                dmodule.find('.J_maskBoxSite').show()
-            })
-            dmodule.find('.J_maskBoxSite').click(function () {
-                $(this).hide()
-                dmodule.find('.J_msgPopupSite').hide()
-            })
-
-
-        },
         //闸泵水情
         gatePump: function (id) {
             var dmodule = $('#' + id);
@@ -416,102 +377,8 @@ var Drainage = {
             })
 
         },
-        // 实时水晴--基本信息
-        basicDetails: function (id) {
-            var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click', 'li', function () {
-                $(this).children('p').addClass("active");
-                $(this).siblings().children('p').removeClass("active");
-                $(this).addClass("active").siblings().removeClass("active");
-                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-            })
-            dmodule.find('.J_screen').click(function () {
-                layer.open({
-                    className: 'screen-popup',
-                    content: '内容'
-                })
-            })
-
-        },
-        // 实时水情
-        waterRegime: function (id) {
-            var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click', 'li', function () {
-                $(this).children('p').addClass("active");
-                $(this).siblings().children('p').removeClass("active");
-                $(this).addClass("active").siblings().removeClass("active");
-                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-            })
-            dmodule.find('.J_selectOnly').click(function () {
-                dmodule.find('.J_msgPopup').show()
-                dmodule.find('.J_maskBox').show()
-            })
-            dmodule.find('.J_maskBox').click(function () {
-                $(this).hide()
-                dmodule.find('.J_msgPopup').hide()
-            })
-            dmodule.find('.J_cancelSel').click(function () {
-                dmodule.find('.J_maskBox').hide()
-                dmodule.find('.J_msgPopup').hide()
-            })
-            dmodule.find('.J_confirmSel').click(function () {
-                var inputVal = dmodule.find('.pump-input input').val()
-                if (inputVal != '') {
-                    dmodule.find('.J_maskBox').hide()
-                    dmodule.find('.J_msgPopup').hide()
-                }
-
-            })
-            dmodule.find('.J_listSel').on('click', 'li', function () {
-                $(this).addClass("active").siblings().removeClass("active");
-
-            })
-            dmodule.find('.J_follow').on('click', 'span', function () {
-                $(this).addClass("active").siblings().removeClass("active");
-
-            })
-            dmodule.find('.J_timeSel').click(function () {
-                dmodule.find('.J_msgPopupTime').show()
-                dmodule.find('.J_maskBoxTime').show()
-            })
-            dmodule.find('.J_maskBoxTime').click(function () {
-                $(this).hide()
-                dmodule.find('.J_msgPopupTime').hide()
-            })
-        },
-        // 实时雨晴--基本信息
-        basicRain: function (id) {
-            var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click', 'li', function () {
-                $(this).children('p').addClass("active");
-                $(this).siblings().children('p').removeClass("active");
-                $(this).addClass("active").siblings().removeClass("active");
-                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-            })
-            dmodule.find('.J_screen').click(function () {
-                layer.open({
-                    className: 'screen-popup',
-                    content: '内容'
-                })
-            })
-
-        },
-        // 实时雨晴--基本信息
-        basicPupm: function (id) {
-            var dmodule = $('#' + id);
-            dmodule.find('.J_tabClick').on('click', 'li', function () {
-                $(this).children('p').addClass("active");
-                $(this).siblings().children('p').removeClass("active");
-                $(this).addClass("active").siblings().removeClass("active");
-                dmodule.find(".products .main-cont").eq($(this).index()).show().siblings().hide();
-            })
-            dmodule.find('.J_screen').click(function () {
-                layer.open({
-                    className: 'screen-popup',
-                    content: '内容'
-                })
-            })
-        },
+        
+  
 
         //管网水情-index
         gwsqIndex: function (id) {
@@ -604,6 +471,11 @@ var Drainage = {
             //底部按钮
             dmodule.find('.J_footerBtn').on('click', '.main .item', function () {
                 $(this).addClass('active').siblings().removeClass('active')
+                if ($(this).index()) {
+                    dmodule.find('.J_zhandianBtn').hide()
+                } else {
+                    dmodule.find('.J_zhandianBtn').show()
+                }
                 //这里写触发事件
             })
 

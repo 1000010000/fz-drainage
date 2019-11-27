@@ -8,7 +8,6 @@ html,
 body {
   font-size: 22px;
   color: #333;
-  touch-action: none;
 }
 
 a {
@@ -165,7 +164,6 @@ table {
   top: 20px;
   padding-left: 90px;
   background: #fff url(../images/icons/find.png) no-repeat 34px center/30px 30px;
-  overflow: hidden;
 }
 
 .base.search-box .input {
@@ -176,6 +174,22 @@ table {
 
 .base.search-box .input::placeholder {
   color: #d1d1d1;
+}
+
+.base.search-box .serch-recommend {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  font-size: 26px;
+  color: #555555;
+  display: none;
+}
+
+.base.search-box .serch-recommend .item {
+  line-height: 20px;
+  padding: 20px 30px;
 }
 
 .base.null-box {
@@ -424,16 +438,31 @@ table {
 .screen-rytj .search-box {
   height: 74px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .screen-rytj .search-box .input {
   width: 60%;
   height: 100%;
   border-radius: 8px;
-  padding-left: 80px;
+  padding-right: 80px;
+  padding-left: 5px;
   box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
   font-size: 30px;
-  background: #fff url(../images/icons/find.png) no-repeat 24px center/30px 30px;
+}
+
+.screen-rytj .search-box .search-btn {
+  position: absolute;
+  top: 4px;
+  left: 42vw;
+  width: 100px;
+  height: 100%;
+  line-height: 74px;
+  background: #5AA9FF;
+  color: #fff;
+  font-size: 28px;
+  text-align: center;
+  border-radius: 0 8px 8px 0;
 }
 
 .screen-rytj .search-box .select-btn {
@@ -462,9 +491,19 @@ table {
 .screen-rytj .table-box th,
 .screen-rytj .table-box td {
   font-size: 26px;
-  width: 25%;
   height: 72px;
   border: 2px solid #f3f5ff;
+}
+
+.screen-rytj .table-box th:nth-child(1), .screen-rytj .table-box th:nth-child(2),
+.screen-rytj .table-box td:nth-child(1),
+.screen-rytj .table-box td:nth-child(2) {
+  width: 15%;
+}
+
+.screen-rytj .table-box th:nth-child(3),
+.screen-rytj .table-box td:nth-child(3) {
+  width: 28%;
 }
 
 .screen-rytj .table-box th {
@@ -1398,14 +1437,15 @@ table {
 }
 
 .page-gwsq .menu {
-  display: -webkit-box;
-  overflow-x: scroll;
-  line-height: 100px;
+  display: flex;
+  height: 100px;
   box-shadow: 0px 6px 8px 0px rgba(130, 130, 130, 0.06);
+  align-items: center;
+  text-align: center;
 }
 
 .page-gwsq .menu .item {
-  margin-left: 30px;
+  flex: 1;
   color: #D1D1D1;
   font-size: 32px;
   position: relative;
@@ -1419,7 +1459,7 @@ table {
 .page-gwsq .menu .item.active::after {
   content: '';
   position: absolute;
-  bottom: 22px;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -1429,9 +1469,9 @@ table {
 }
 
 .page-gwsq .menu .time-btn {
-  margin-left: 30px;
   padding-right: 100px;
   color: #D1D1D1;
+  margin-left: 10px;
   font-size: 32px;
   cursor: pointer;
 }
@@ -1906,7 +1946,6 @@ table {
   background: #5AA9FF;
   border-color: #5AA9FF;
   color: #FFF;
-  padding: 0 20px;
 }
 
 .choice-pop-up .list-box .list.state {
@@ -1932,9 +1971,10 @@ table {
 .choice-pop-up .list-box .list.yujing .item {
   width: auto;
   border: none;
-  margin-right: 100px;
+  margin-right: 40px;
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
 .choice-pop-up .list-box .list.yujing .item .color {
@@ -2944,6 +2984,10 @@ table {
 
 .slide-bar .item.screen {
   background-image: url(../images/icons/screen.png);
+}
+
+.office-vehicle .right-nav {
+  top: 0;
 }
 
 .vehicle-list .infor-content {

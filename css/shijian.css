@@ -39,21 +39,16 @@
   border-radius: 1.6vw;
   font-size: 5.3333vw;
   text-shadow: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   z-index: 2;
   position: absolute;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -ms-touch-action: none;
   overflow: hidden;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  touch-action: none;
 }
 
 .df-final {
