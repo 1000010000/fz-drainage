@@ -1507,6 +1507,14 @@ table {
   font-size: 26px;
 }
 
+.page-gwsq .tab-main .time-tips + .container .left .list2 {
+  height: calc(100vh - 490px);
+}
+
+.page-gwsq .tab-main .time-tips + .container .right .list2 {
+  height: calc(100vh - 490px);
+}
+
 .page-gwsq .tab-main .table-list-scroll {
   width: 100%;
 }
@@ -1601,7 +1609,7 @@ table {
 
 .page-gwsq .tab-main .container .left .list2 {
   width: 100%;
-  height: calc(100vh - 460px);
+  height: calc(100vh - 400px);
   overflow: hidden;
 }
 
@@ -1621,7 +1629,7 @@ table {
 
 .page-gwsq .tab-main .container .right .list2 {
   width: 100%;
-  height: calc(100vh - 460px);
+  height: calc(100vh - 400px);
   overflow: auto;
 }
 
@@ -1672,7 +1680,9 @@ table {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 24px 0;
+  height: 120px;
+  background: #fff;
+  align-items: center;
 }
 
 .footer .main .item {
@@ -1680,6 +1690,7 @@ table {
   margin: 0 12px;
   width: 172px;
   line-height: 72px;
+  height: 72px;
   box-shadow: 0px 0px 10px 0px #e1e7f0;
   color: #333333;
   font-size: 34px;

@@ -464,6 +464,7 @@ table {
         height: 74px;
         margin-bottom: 20px;
         position: relative;
+
         .input {
             width: 60%;
             height: 100%;
@@ -473,7 +474,8 @@ table {
             box-shadow: 0px 0px 6px rgba(130, 130, 130, 0.2);
             font-size: 30px;
         }
-        .search-btn{
+
+        .search-btn {
             position: absolute;
             top: 4px;
             left: 42vw;
@@ -486,6 +488,7 @@ table {
             text-align: center;
             border-radius: 0 8px 8px 0;
         }
+
         .select-btn {
             display: inline-block;
             height: 100%;
@@ -514,13 +517,17 @@ table {
             font-size: 26px;
             height: 72px;
             border: 2px solid #f3f5ff;
-            &:nth-child(1),&:nth-child(2){
+
+            &:nth-child(1),
+            &:nth-child(2) {
                 width: 15%;
             }
-            &:nth-child(3){
+
+            &:nth-child(3) {
                 width: 28%;
             }
         }
+
         th {
             background: #f4f6f7;
         }
@@ -1556,6 +1563,7 @@ table {
         box-shadow: 0px 6px 8px 0px rgba(130, 130, 130, 0.06);
         align-items: center;
         text-align: center;
+
         .item {
             flex: 1;
             color: #D1D1D1;
@@ -1618,6 +1626,19 @@ table {
             line-height: 92px;
             color: #ABABAB;
             font-size: 26px;
+
+            &+.container {
+                .left {
+                    .list2 {
+                        height: calc(100vh - 490px);
+                    }
+                }
+                .right{
+                    .list2 {
+                        height: calc(100vh - 490px);
+                    }
+                }
+            }
         }
 
         .table-list-scroll {
@@ -1719,7 +1740,7 @@ table {
 
                 .list2 {
                     width: 100%;
-                    height: calc(100vh - 460px);
+                    height: calc(100vh - 400px);
                     overflow: hidden;
 
                     .table2 {
@@ -1740,7 +1761,7 @@ table {
 
                 .list2 {
                     width: 100%;
-                    height: calc(100vh - 460px);
+                    height: calc(100vh - 400px);
                     overflow: auto;
                 }
 
@@ -1796,13 +1817,16 @@ table {
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 24px 0;
+        height: 120px;
+        background: #fff;
+        align-items: center;
 
         .item {
             cursor: pointer;
             margin: 0 12px;
             width: 172px;
             line-height: 72px;
+            height: 72px;
             box-shadow: 0px 0px 10px 0px #e1e7f0;
             color: #333333;
             font-size: 34px;
@@ -3188,12 +3212,14 @@ table {
         }
     }
 }
+
 //车辆首页
-.office-vehicle{
-    .right-nav{
+.office-vehicle {
+    .right-nav {
         top: 0;
     }
 }
+
 // 车辆列表
 .vehicle-list {
     .infor-content {
