@@ -398,6 +398,11 @@ table {
         top: 0;
     }
 
+    .scroll-box {
+        height: calc(100vh - 280px);
+        overflow-y: auto;
+    }
+
     .mask-box {
         position: fixed;
         left: 0;
@@ -1633,7 +1638,8 @@ table {
                         height: calc(100vh - 490px);
                     }
                 }
-                .right{
+
+                .right {
                     .list2 {
                         height: calc(100vh - 490px);
                     }
@@ -1801,6 +1807,19 @@ table {
                 background: #F8F9FE;
             }
 
+            &.pksq {
+                .left {
+                    .list2 {
+                        height: calc(100vh - 300px);
+                    }
+                }
+
+                .right {
+                    .list2 {
+                        height: calc(100vh - 300px);
+                    }
+                }
+            }
         }
 
     }
@@ -2233,7 +2252,7 @@ table {
         }
 
         .details-data {
-            height: 430px;
+            height: 480px;
             // background: #5AA9FF;
         }
 

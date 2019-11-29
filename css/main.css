@@ -376,6 +376,11 @@ table {
   top: 0;
 }
 
+.screen-rytj .scroll-box {
+  height: calc(100vh - 280px);
+  overflow-y: auto;
+}
+
 .screen-rytj .mask-box {
   position: fixed;
   left: 0;
@@ -1668,6 +1673,14 @@ table {
   background: #F8F9FE;
 }
 
+.page-gwsq .tab-main .container.pksq .left .list2 {
+  height: calc(100vh - 300px);
+}
+
+.page-gwsq .tab-main .container.pksq .right .list2 {
+  height: calc(100vh - 300px);
+}
+
 .footer {
   height: 120px;
 }
@@ -2073,7 +2086,7 @@ table {
 }
 
 .gwsq-jcxx .tab-main .details-data {
-  height: 430px;
+  height: 480px;
 }
 
 .gwsq-jcxx .tab-main .data-time {
