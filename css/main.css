@@ -25,6 +25,7 @@ textarea {
   outline: none;
   border: none;
   vertical-align: middle;
+  -webkit-appearance: none;
 }
 
 input::placeholder {
@@ -314,11 +315,10 @@ table {
 }
 
 .office-ry .msg-popup input[type=checkbox] {
-  zoom: 200%;
-  vertical-align: middle;
+  vertical-align: -6px;
   margin-right: 4px;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   -webkit-appearance: none;
   background-position: center;
   background-repeat: no-repeat;
@@ -410,11 +410,10 @@ table {
 }
 
 .screen-rytj .msg-popup input[type=checkbox] {
-  zoom: 200%;
-  vertical-align: middle;
+  vertical-align: sub;
   margin-right: 4px;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   -webkit-appearance: none;
   background-position: center;
   background-repeat: no-repeat;
@@ -1615,7 +1614,7 @@ table {
 .page-gwsq .tab-main .container .left .list2 {
   width: 100%;
   height: calc(100vh - 400px);
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .page-gwsq .tab-main .container .left .list2 .table2 {

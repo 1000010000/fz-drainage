@@ -507,6 +507,10 @@ var Drainage = {
                 dmodule.find('.J_tableContainer .right .list1').scrollLeft(left);
             })
 
+            $('.J_tableContainer .left .list2').on('scroll', function () {
+                let top = $(this).scrollTop();
+                dmodule.find('.J_tableContainer .right .list2').scrollTop(top);
+            })
         },
 
         //管网水情-监测信息
